@@ -108,15 +108,15 @@ a {
 
 /* Specific background for each profile page */
 .hiring-team-page {
-    background-image: url('https://i.imgur.com/nTL8qzO.gifv');
+    background-image: url('https://i.imgur.com/nTL8qzO.gif');
 }
 
 .learners-lounge-page {
-    background-image: url('https://i.imgur.com/4bt4ZX9.gifv');
+    background-image: url('https://i.imgur.com/4bt4ZX9.gif');
 }
 
 .curious-watcher-page {
-    background-image: url('https://i.imgur.com/I7jG5VW.gifv');
+    background-image: url('https://i.imgur.com/I7jG5VW.gif');
 }
 
 /* Header and navigation */
@@ -179,7 +179,8 @@ nav {
     background-color: rgba(229, 9, 20, 0.7);
 }
 
-nav:hover .dropdown-menu {
+nav:hover .dropdown-menu,
+ .dropdown-menu:hover {
     display: block;
 }
 
