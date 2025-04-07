@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Animate logo
             this.style.animation = 'netflixStart 1s';
             
-            // After animation and sound, redirect to profiles page
-            setTimeout(function() {
-                window.location.href = 'profiles.html';
-            }, 1500);
-        });
+            // ⏱️ Wait until audio fully finishes before redirecting
+                netflixSound.addEventListener('ended', function() {
+                    window.location.href = 'profiles.html';
+                });
+            });
         
         // Reset animation after it completes
         landingLogo.addEventListener('animationend', function() {
