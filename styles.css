@@ -506,7 +506,7 @@
 
 /* Flight School Page */
 .flight-school-page {
-    background: url('https://i.imgur.com/REPLACE_FLIGHT_BACKGROUND.jpg') no-repeat center top;
+    background: url('https://i.imgur.com/REPLACE_WITH_YOUR_IMGUR_ID.png') no-repeat center top;
     background-size: contain;
     background-color: #000000;
 }
@@ -1244,15 +1244,15 @@ a {
 
 /* Specific background for each profile page banner */
 .hiring-team-page .page-banner {
-    background-image: url('https://i.imgur.com/REPLACE_HIRING_TEAM_BACKGROUND.gif');
+    background-image: url('https://i.imgur.com/nTL8qzO.gif');
 }
 
 .learners-lounge-page .page-banner {
-    background-image: url('https://i.imgur.com/REPLACE_LEARNERS_LOUNGE_BACKGROUND.gif');
+    background-image: url('https://i.imgur.com/4bt4ZX9.gif');
 }
 
 .curious-watcher-page .page-banner {
-    background-image: url('https://i.imgur.com/REPLACE_CURIOUS_WATCHER_BACKGROUND.gif');
+    background-image: url('https://i.imgur.com/HAuvrsx.gif');
 }
 
 /* Gradient overlay for the banner bottom to blend with content */
