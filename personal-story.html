@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Story</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="content-page sub-page">
+    <!-- Header with horizontal navigation -->
+    <header>
+        <div class="header-container">
+            <div class="left-nav">
+                <a href="index.html" class="logo">Larry E. Roberts, Jr.</a>
+                <nav class="horizontal-nav">
+                    <a href="curious-watcher.html" class="nav-link">Home</a>
+                    <a href="personal-story.html" class="nav-link active">My Journey</a>
+                    <a href="contact.html" class="nav-link">Contact Me</a>
+                </nav>
+            </div>
+            <div class="right-nav">
+                <a href="profiles.html" class="profile-icon">
+                    <img src="https://i.imgur.com/uIot20u.jpg" alt="Curious Watcher">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="personal-story-page">
+        <div class="page-title">
+            <h1>My Journey</h1>
+        </div>
+
+        <!-- Interactive timeline with life chapters -->
+        <div class="story-container">
+            <!-- Life chapters navigation - Netflix style seasons -->
+            <div class="life-chapters">
+                <div class="chapter-selector">
+                    <button class="chapter-btn active" data-chapter="early-years">
+                        <div class="chapter-number">01</div>
+                        <div class="chapter-title">Early Years</div>
+                    </button>
+                    <button class="chapter-btn" data-chapter="education">
+                        <div class="chapter-number">02</div>
+                        <div class="chapter-title">Education</div>
+                    </button>
+                    <button class="chapter-btn" data-chapter="career-beginnings">
+                        <div class="chapter-number">03</div>
+                        <div class="chapter-title">Career Beginnings</div>
+                    </button>
+                    <button class="chapter-btn" data-chapter="pivotal-moments">
+                        <div class="chapter-number">04</div>
+                        <div class="chapter-title">Pivotal Moments</div>
+                    </button>
+                    <button class="chapter-btn" data-chapter="current-chapter">
+                        <div class="chapter-number">05</div>
+                        <div class="chapter-title">Current Chapter</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chapter content - changes based on selection -->
+            <div class="chapter-content-container">
+                <!-- Early Years -->
+                <div class="chapter-content active" id="early-years-content">
+                    <div class="chapter-header">
+                        <div class="chapter-info">
+                            <h2>Early Years</h2>
+                            <div class="chapter-meta">
+                                <span class="chapter-years">The Beginning - Age 12</span>
+                                <span class="chapter-location">Hometown</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter-episodes">
+                        <!-- Each episode represents a key memory or event -->
+                        <div class="episode">
+                            <div class="episode-number">01</div>
+                            <div class="episode-content">
+                                <h3>First Encounters with Technology</h3>
+                                <p>My journey with technology began when my parents brought home our first family computer. I was immediately fascinated by how it worked and spent hours exploring its capabilities. This early exposure sparked a curiosity that would define my future path.</p>
+                                <div class="episode-image">
+                                    <img src="https://i.imgur.com/REPLACE_CHILDHOOD_COMPUTER.jpg" alt="Childhood Computer">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">02</div>
+                            <div class="episode-content">
+                                <h3>Childhood Inspirations</h3>
+                                <p>Growing up, I was deeply influenced by [influential person/event]. Their work in [relevant field] showed me the transformative power of technology and innovation. I began to dream of one day contributing to this field in my own unique way.</p>
+                                <div class="memorable-quote">
+                                    <span class="quote-mark">"</span>
+                                    <p>Insert a memorable quote from your childhood or about your early influences that shaped your path.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">03</div>
+                            <div class="episode-content">
+                                <h3>Early Creative Projects</h3>
+                                <p>By age 12, I had already begun experimenting with [relevant skills/tools]. My first project was [description of early project], which taught me valuable lessons about problem-solving and creativity. These early experiments laid the foundation for my approach to challenges throughout my life.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="chapter-content" id="education-content">
+                    <div class="chapter-header">
+                        <div class="chapter-info">
+                            <h2>Education</h2>
+                            <div class="chapter-meta">
+                                <span class="chapter-years">Age 13 - 22</span>
+                                <span class="chapter-location">Schools & University</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter-episodes">
+                        <div class="episode">
+                            <div class="episode-number">01</div>
+                            <div class="episode-content">
+                                <h3>Formative School Years</h3>
+                                <p>During high school, I discovered my passion for [subjects]. My [teacher/mentor] recognized my aptitude for [skills] and encouraged me to pursue them further. This guidance was instrumental in shaping my educational and career choices.</p>
+                                <div class="episode-image">
+                                    <img src="https://i.imgur.com/REPLACE_SCHOOL_PHOTO.jpg" alt="School Photo">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">02</div>
+                            <div class="episode-content">
+                                <h3>College Decisions</h3>
+                                <p>Choosing to study [your major] at [your university] was a pivotal decision. The program offered [key benefits], which aligned perfectly with my interests in [specific aspects of your field]. This choice opened doors to opportunities I hadn't even imagined.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">03</div>
+                            <div class="episode-content">
+                                <h3>Key Academic Projects</h3>
+                                <p>My most significant academic achievement was [project description]. Working on this project taught me [important skills/lessons] and confirmed my passion for [your field]. The positive feedback from [professors/peers] motivated me to push my boundaries even further.</p>
+                                <div class="achievement-highlight">
+                                    <h4>Key Achievement</h4>
+                                    <p>Describe an award, recognition, or significant accomplishment from your educational period.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Career Beginnings -->
+                <div class="chapter-content" id="career-beginnings-content">
+                    <div class="chapter-header">
+                        <div class="chapter-info">
+                            <h2>Career Beginnings</h2>
+                            <div class="chapter-meta">
+                                <span class="chapter-years">First 5 Years</span>
+                                <span class="chapter-location">Professional World</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter-episodes">
+                        <div class="episode">
+                            <div class="episode-number">01</div>
+                            <div class="episode-content">
+                                <h3>First Professional Role</h3>
+                                <p>My career began at [company name] as a [job title]. This role exposed me to [specific aspects of the industry] and allowed me to develop skills in [relevant areas]. Working with [mentors/colleagues] taught me the importance of [professional lesson].</p>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">02</div>
+                            <div class="episode-content">
+                                <h3>Major Projects & Learning</h3>
+                                <p>One of my earliest significant projects was [project description]. The challenge of [specific obstacle] pushed me to learn [new skills]. Successfully delivering this project gave me confidence in my ability to [relevant professional skill].</p>
+                                <div class="episode-image">
+                                    <img src="https://i.imgur.com/REPLACE_EARLY_CAREER.jpg" alt="Early Career">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">03</div>
+                            <div class="episode-content">
+                                <h3>Growth & Development</h3>
+                                <p>The transition from [earlier role] to [later role] marked an important phase in my professional growth. Taking on responsibilities for [new areas] expanded my understanding of [industry knowledge]. This period reinforced my passion for [specific aspect of your work].</p>
+                                <div class="memorable-quote">
+                                    <span class="quote-mark">"</span>
+                                    <p>Insert a quote about your early career that captures your mindset or a lesson learned during this time.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pivotal Moments -->
+                <div class="chapter-content" id="pivotal-moments-content">
+                    <div class="chapter-header">
+                        <div class="chapter-info">
+                            <h2>Pivotal Moments</h2>
+                            <div class="chapter-meta">
+                                <span class="chapter-years">Key Turning Points</span>
+                                <span class="chapter-location">Career & Personal Life</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter-episodes">
+                        <div class="episode">
+                            <div class="episode-number">01</div>
+                            <div class="episode-content">
+                                <h3>Career Transformation</h3>
+                                <p>The decision to [pivot/specialize/change careers] was prompted by [specific event or realization]. Though challenging, this transition allowed me to [benefits of the change]. Looking back, I recognize this as one of the most formative periods of my professional life.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">02</div>
+                            <div class="episode-content">
+                                <h3>Taking Risks</h3>
+                                <p>Accepting the opportunity at [company/project/role] despite [uncertainties/challenges] taught me the value of calculated risk-taking. This experience showed me that [personal insight] and reinforced my belief in [personal philosophy].</p>
+                                <div class="episode-image">
+                                    <img src="https://i.imgur.com/REPLACE_PIVOTAL_MOMENT.jpg" alt="Pivotal Career Moment">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">03</div>
+                            <div class="episode-content">
+                                <h3>Overcoming Challenges</h3>
+                                <p>Facing [significant challenge] tested my resilience and problem-solving abilities. By approaching the situation with [your approach], I was able to [positive outcome]. This experience fundamentally changed how I view [aspect of work/life].</p>
+                                <div class="achievement-highlight">
+                                    <h4>Breakthrough Moment</h4>
+                                    <p>Describe a significant breakthrough or achievement that resulted from navigating this pivotal period.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Chapter -->
+                <div class="chapter-content" id="current-chapter-content">
+                    <div class="chapter-header">
+                        <div class="chapter-info">
+                            <h2>Current Chapter</h2>
+                            <div class="chapter-meta">
+                                <span class="chapter-years">Present Day</span>
+                                <span class="chapter-location">Professional & Personal Focus</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter-episodes">
+                        <div class="episode">
+                            <div class="episode-number">01</div>
+                            <div class="episode-content">
+                                <h3>Where I Am Now</h3>
+                                <p>Currently, I'm focused on [current role/projects]. My work involves [key responsibilities] and allows me to leverage my expertise in [skills/knowledge areas]. I'm particularly passionate about [specific aspect of current work] and the impact it has on [beneficiaries/stakeholders].</p>
+                                <div class="episode-image">
+                                    <img src="https://i.imgur.com/REPLACE_CURRENT_WORK.jpg" alt="Current Work">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">02</div>
+                            <div class="episode-content">
+                                <h3>Professional Philosophy</h3>
+                                <p>My approach to [your field] is guided by the belief that [your professional philosophy]. I strive to [your professional goals] while maintaining [your values]. This perspective has been shaped by my experiences and continues to evolve as I grow professionally.</p>
+                                <div class="memorable-quote">
+                                    <span class="quote-mark">"</span>
+                                    <p>Insert a quote that captures your current professional philosophy or approach to your work.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">03</div>
+                            <div class="episode-content">
+                                <h3>Looking Forward</h3>
+                                <p>As I look to the future, I'm excited about [upcoming projects/goals]. I'm particularly interested in exploring [new areas/technologies/approaches] and their potential to [desired impact]. My journey continues to be driven by [your motivation] and a commitment to [your purpose].</p>
+                                <div class="cta-next-chapter">
+                                    <h4>Next Chapter Preview</h4>
+                                    <p>Share a glimpse of what you hope the next chapter of your professional journey might include.</p>
+                                    <a href="contact.html" class="story-cta-button">Connect With Me</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Chapter switching functionality
+            const chapterButtons = document.querySelectorAll('.chapter-btn');
+            const chapterContents = document.querySelectorAll('.chapter-content');
+            
+            chapterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    chapterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show selected chapter content, hide others
+                    const selectedChapter = this.dataset.chapter;
+                    chapterContents.forEach(content => {
+                        if (content.id === selectedChapter + '-content') {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

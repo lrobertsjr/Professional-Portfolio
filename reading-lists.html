@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Lists & Podcasts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="content-page sub-page">
+    <!-- Header with horizontal navigation -->
+    <header>
+        <div class="header-container">
+            <div class="left-nav">
+                <a href="index.html" class="logo">Larry E. Roberts, Jr.</a>
+                <nav class="horizontal-nav">
+                    <a href="curious-watcher.html" class="nav-link">Home</a>
+                    <a href="personal-story.html" class="nav-link">My Journey</a>
+                    <a href="contact.html" class="nav-link">Contact Me</a>
+                </nav>
+            </div>
+            <div class="right-nav">
+                <a href="profiles.html" class="profile-icon">
+                    <img src="https://i.imgur.com/uIot20u.jpg" alt="Curious Watcher">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="reading-lists-page">
+        <div class="page-title">
+            <h1>Reading Lists & Podcasts</h1>
+        </div>
+
+        <!-- Netflix-style content selector -->
+        <div class="content-selector">
+            <button class="content-tab active" data-content="books">Books</button>
+            <button class="content-tab" data-content="podcasts">Podcasts</button>
+        </div>
+
+        <!-- Books Content -->
+        <div class="content-section active" id="books-content">
+            <!-- Book showcase - Netflix style rows -->
+            <div class="book-showcase">
+                <!-- Current Reading & Favorites Section -->
+                <div class="book-section">
+                    <h2 class="section-heading">My Reading List</h2>
+                    <div class="book-row">
+                        <!-- Book 1 (Currently Reading) -->
+                        <div class="book-card current-read">
+                            <div class="book-cover">
+                                <img src="https://i.imgur.com/G5md88O.jpg" alt="Book 1">
+                                <div class="book-progress">
+                                    <div class="progress-bar" style="width: 65%;"></div>
+                                    <span class="progress-text">Currently Reading</span>
+                                </div>
+                            </div>
+                            <div class="book-info">
+                                <h3>Inside the Outbreaks</h3>
+                                <p class="book-author">Mark Pendergrast</p>
+                                <div class="book-meta">
+                                    <span class="book-year">2010</span>
+                                    <span class="book-rating">★★★★☆</span>
+                                </div>
+                            </div>
+                            <div class="book-details">
+                                <p class="book-description">Brief description of the book and why it caught your interest. What you're learning from it and how it relates to your personal or professional interests.</p>
+                                <div class="favorite-quote">
+                                    <span class="quote-mark">"</span>
+                                    <p>A memorable quote from the book that resonated with you.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Book 2 -->
+                        <div class="book-card">
+                            <div class="book-cover">
+                                <img src="https://i.imgur.com/ibgwxRe.jpg" alt="Book 2">
+                                <div class="book-rating-badge">★★★★★</div>
+                            </div>
+                            <div class="book-info">
+                                <h3>Fire & Blood</h3>
+                                <p class="book-author">George R.R. Martin</p>
+                                <div class="book-meta">
+                                    <span class="book-year">2018</span>
+                                </div>
+                            </div>
+                            <div class="book-details">
+                                <p class="book-description">My # 1 Guilty Pleasure.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Book 3 -->
+                        <div class="book-card">
+                            <div class="book-cover">
+                                <img src="https://i.imgur.com/REPLACE_BOOK3.jpg" alt="Book 3">
+                                <div class="book-rating-badge">★★★★☆</div>
+                            </div>
+                            <div class="book-info">
+                                <h3>Book Title 3</h3>
+                                <p class="book-author">Author Name</p>
+                                <div class="book-meta">
+                                    <span class="book-year">2020</span>
+                                </div>
+                            </div>
+                            <div class="book-details">
+                                <p class="book-description">Brief description of this book and why it's meaningful to you. What key insights or enjoyment you gained from reading it.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Book 4 -->
+                        <div class="book-card">
+                            <div class="book-cover">
+                                <img src="https://i.imgur.com/REPLACE_BOOK4.jpg" alt="Book 4">
+                                <div class="book-rating-badge">★★★★★</div>
+                            </div>
+                            <div class="book-info">
+                                <h3>Book Title 4</h3>
+                                <p class="book-author">Author Name</p>
+                                <div class="book-meta">
+                                    <span class="book-year">2019</span>
+                                </div>
+                            </div>
+                            <div class="book-details">
+                                <p class="book-description">Brief description of this book and why it's meaningful to you. What key insights or enjoyment you gained from reading it.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Reading philosophy quote -->
+            <div class="reading-philosophy">
+                <div class="quote-content">
+                    <span class="large-quote-mark">"</span>
+                    <p>Insert a quote about reading or books that resonates with your approach to learning and growth.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Podcasts Content -->
+        <div class="content-section" id="podcasts-content">
+            <!-- Podcasts in Netflix-style layout -->
+            <div class="podcast-categories">
+                <div class="podcast-category">
+                    <h2 class="category-heading">My Favorite Podcasts</h2>
+                    <div class="podcast-row">
+                        <!-- Podcast 1 -->
+                        <div class="podcast-card">
+                            <div class="podcast-artwork">
+                                <img src="https://i.imgur.com/UG8wRUC.jpg" alt="Podcast 1">
+                                <div class="podcast-play-button">
+                                    <div class="play-icon"></div>
+                                </div>
+                            </div>
+                            <div class="podcast-info">
+                                <h3>Hacking Chinese</h3>
+                                <p class="podcast-host">Hosted by Olle Linge</p>
+                                <div class="podcast-meta">
+                                    <span class="podcast-category">Culture</span>
+                                    <span class="podcast-frequency">Weekly</span>
+                                </div>
+                            </div>
+                            <div class="podcast-details">
+                                <p class="podcast-description">Determined pursuit to learn the Mandarin language</p>
+                                <div class="favorite-episodes">
+                                    <h4>Favorite Episode</h4>
+                                    <p>"Episode Title" with Guest Name</p>
+                                </div>
+                                <a href="#" class="podcast-link" target="_blank">Listen Now</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Podcast 2 -->
+                        <div class="podcast-card">
+                            <div class="podcast-artwork">
+                                <img src="https://i.imgur.com/Lc7bz8W.jpg" alt="Podcast 2">
+                                <div class="podcast-play-button">
+                                    <div class="play-icon"></div>
+                                </div>
+                            </div>
+                            <div class="podcast-info">
+                                <h3>FreeCodeCamp</h3>
+                                <p class="podcast-host">Hosted by Quincy Larson</p>
+                                <div class="podcast-meta">
+                                    <span class="podcast-category">Technology</span>
+                                    <span class="podcast-frequency">Bi-weekly</span>
+                                </div>
+                            </div>
+                            <div class="podcast-details">
+                                <p class="podcast-description">Brief description of what this podcast covers and why you find it valuable. What you've learned from it and how it influences your thinking.</p>
+                                <div class="favorite-episodes">
+                                    <h4>Favorite Episode</h4>
+                                    <p>"Episode Title" with Guest Name</p>
+                                </div>
+                                <a href="#" class="podcast-link" target="_blank">Listen Now</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Podcast 3 -->
+                        <div class="podcast-card">
+                            <div class="podcast-artwork">
+                                <img src="https://i.imgur.com/aKcb2c6.jpg" alt="Podcast 3">
+                                <div class="podcast-play-button">
+                                    <div class="play-icon"></div>
+                                </div>
+                            </div>
+                            <div class="podcast-info">
+                                <h3>AI for Pharma Growth</h3>
+                                <p class="podcast-host">Hosted by Dr. Andree Batese</p>
+                                <div class="podcast-meta">
+                                    <span class="podcast-category">AI/Technology</span>
+                                    <span class="podcast-frequency">Monthly</span>
+                                </div>
+                            </div>
+                            <div class="podcast-details">
+                                <p class="podcast-description">Brief description of what this podcast covers and why you find it valuable. What you've learned from it and how it influences your thinking.</p>
+                                <div class="favorite-episodes">
+                                    <h4>Favorite Episode</h4>
+                                    <p>"Episode Title" with Guest Name</p>
+                                </div>
+                                <a href="#" class="podcast-link" target="_blank">Listen Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Listening habits -->
+            <div class="listening-habits">
+                <h2>My Listening Habits</h2>
+                <div class="habits-content">
+                    <div class="habit-item">
+                        <h3>When I Listen</h3>
+                        <p>During my morning commute, while exercising, and when cooking dinner. Podcasts are my preferred way to make routine activities more engaging and educational.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Content tab switching
+            const contentTabs = document.querySelectorAll('.content-tab');
+            const contentSections = document.querySelectorAll('.content-section');
+            
+            contentTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Update active tab
+                    contentTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding content section
+                    const selectedContent = this.dataset.content;
+                    contentSections.forEach(section => {
+                        if (section.id === selectedContent + '-content') {
+                            section.classList.add('active');
+                        } else {
+                            section.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Book card expansion
+            const bookCards = document.querySelectorAll('.book-card');
+            bookCards.forEach(card => {
+                const coverElement = card.querySelector('.book-cover');
+                if (coverElement) {
+                    coverElement.addEventListener('click', function() {
+                        card.classList.toggle('expanded');
+                    });
+                }
+            });
+            
+            // Podcast card expansion
+            const podcastCards = document.querySelectorAll('.podcast-card');
+            podcastCards.forEach(card => {
+                const artworkElement = card.querySelector('.podcast-artwork');
+                if (artworkElement) {
+                    artworkElement.addEventListener('click', function() {
+                        card.classList.toggle('expanded');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

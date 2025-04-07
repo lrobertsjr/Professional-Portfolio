@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Paths</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="content-page sub-page">
+    <!-- Header with horizontal navigation -->
+    <header>
+        <div class="header-container">
+            <div class="left-nav">
+                <a href="index.html" class="logo">Larry E. Roberts, Jr.</a>
+                <nav class="horizontal-nav">
+                    <a href="learners-lounge.html" class="nav-link">Home</a>
+                    <a href="tutorials.html" class="nav-link">Tutorials</a>
+                    <a href="contact.html" class="nav-link">Contact Me</a>
+                </nav>
+            </div>
+            <div class="right-nav">
+                <a href="profiles.html" class="profile-icon">
+                    <img src="https://i.imgur.com/8wlPezj.jpg" alt="Learners Lounge">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="learning-paths-page">
+        <div class="page-title">
+            <h1>Learning Paths</h1>
+            <p class="page-subtitle">Curated roadmaps to guide your learning journey</p>
+        </div>
+
+        <!-- Interactive Path Selector -->
+        <div class="path-selector">
+            <div class="selector-instruction">Choose your learning path:</div>
+            <div class="path-options">
+                <div class="path-option active" data-path="data-analyst">
+                    <div class="path-icon">
+                        <img src="https://i.imgur.com/pCCmfWS.gif" alt="Data Analyst Icon">
+                    </div>
+                    <div class="path-label">Data Analyst</div>
+                </div>
+                <div class="path-option" data-path="web-dev">
+                    <div class="path-icon">
+                        <img src="https://i.imgur.com/REPLACE_WEB_ICON.png" alt="Web Developer Icon">
+                    </div>
+                    <div class="path-label">Web Developer</div>
+                </div>
+                <div class="path-option" data-path="ux-designer">
+                    <div class="path-icon">
+                        <img src="https://i.imgur.com/REPLACE_UX_ICON.png" alt="UX Designer Icon">
+                    </div>
+                    <div class="path-label">UX Designer</div>
+                </div>
+                <div class="path-option" data-path="project-manager">
+                    <div class="path-icon">
+                        <img src="https://i.imgur.com/REPLACE_PM_ICON.png" alt="Project Manager Icon">
+                    </div>
+                    <div class="path-label">Project Manager</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Path Content Display -->
+        <div class="path-content-container">
+            <!-- Data Analyst Path -->
+            <div class="path-content active" id="data-analyst-path">
+                <div class="path-header">
+                    <h2>Data Analyst Learning Path</h2>
+                    <div class="path-info">
+                        <div class="path-stat">
+                            <span class="stat-label">Estimated Time:</span>
+                            <span class="stat-value">6-9 months</span>
+                        </div>
+                        <div class="path-stat">
+                            <span class="stat-label">Difficulty:</span>
+                            <span class="stat-value">Intermediate</span>
+                        </div>
+                        <div class="path-stat">
+                            <span class="stat-label">Prerequisites:</span>
+                            <span class="stat-value">Basic math, computer skills</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="path-roadmap">
+                    <div class="roadmap-milestone foundation">
+                        <div class="milestone-marker">
+                            <div class="milestone-number">1</div>
+                            <div class="milestone-label">Foundation</div>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="content-box">
+                                <h3>Data Analysis Fundamentals</h3>
+                                <ul class="skill-checklist">
+                                    <li class="skill-item">
+                                        <span class="skill-name">Spreadsheet Mastery (Excel/Google Sheets)</span>
+                                        <span class="skill-level" title="Essential Skill">★★★</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <span class="skill-name">Basic Statistical Concepts</span>
+                                        <span class="skill-level" title="Essential Skill">★★★</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <span class="skill-name">Data Cleaning Techniques</span>
+                                        <span class="skill-level" title="Essential Skill">★★★</span>
+                                    </li>
+                                </ul>
+                                <div class="resource-links">
+                                    <h4>Recommended Resources:</h4>
+                                    <a href="#" target="_blank">Excel Essentials Course</a>
+                                    <a href="#" target="_blank">Introduction to Statistics</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-milestone tools">
+                        <div class="milestone-marker">
+                            <div class="milestone-number">2</div>
+                            <div class="milestone-label">Tools & Technologies</div>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="content-box">
+                                <h3>Data Analysis Tools</h3>
+                                <ul class="skill-checklist">
+                                    <li class="skill-item">
+                                        <span class="skill-name">SQL for Data Querying</span>
+                                        <span class="skill-level" title="Essential Skill">★★★</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <span class="skill-name">Tableau/Power BI</span>
+                                        <span class="skill-level" title="Essential Skill">★★★</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <span class="skill-name">Python or R Basics</span>
+                                        <span class="skill-level" title="Useful Skill">★★☆</span>
+                                    </li>
+                                </ul>
+                                <div class="resource-links">
+                                    <h4>Recommended Resources:</h4>
+                                    <a href="#" target="_blank">SQL Fundamentals</a>
+                                    <a href="#" target="_blank">Tableau for Beginners</a>
+                                    <a href="#" target="_blank">Python Data Analysis</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-milestone advanced">
+                        <div class="milestone-marker">
+                            <div class="milestone-number">3</div>
+                            <div class="milestone-label">Advanced Techniques</div>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="content-box">
+                                <h3>Advanced Analysis Methods</h3>
+                                <ul class="skill-checklist">
+                                    <li class="skill-item">
+                                        <span class="skill-name">Statistical Analysis</span>
+                                        <span class="skill-level" title="Essential Skill">★★★</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <span class="skill-name">Data Visualization Best Practices</span>
+                                        <span class="skill-level" title="Essential Skill">★★★</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <span class="skill-name">Dashboard Creation</span>
+                                        <span class="skill-level" title="Essential Skill">★★★</span>
+                                    </li>
+                                </ul>
+                                <div class="resource-links">
+                                    <h4>Recommended Resources:</h4>
+                                    <a href="#" target="_blank">Applied Statistics Course</a>
+                                    <a href="#" target="_blank">Data Visualization Mastery</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-milestone specialization">
+                        <div class="milestone-marker">
+                            <div class="milestone-number">4</div>
+                            <div class="milestone-label">Specialization</div>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="content-box">
+                                <h3>Choose Your Focus Area</h3>
+                                <div class="specialization-options">
+                                    <div class="specialization-option">
+                                        <h4>Marketing Analytics</h4>
+                                        <p>Focus on customer segmentation, campaign analysis, and attribution modeling</p>
+                                        <a href="#" class="specialization-link">Explore Path</a>
+                                    </div>
+                                    <div class="specialization-option">
+                                        <h4>Financial Analytics</h4>
+                                        <p>Develop skills in financial modeling, forecasting, and risk analysis</p>
+                                        <a href="#" class="specialization-link">Explore Path</a>
+                                    </div>
+                                    <div class="specialization-option">
+                                        <h4>Product Analytics</h4>
+                                        <p>Master user behavior analysis, A/B testing, and product metrics</p>
+                                        <a href="#" class="specialization-link">Explore Path</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-milestone portfolio">
+                        <div class="milestone-marker">
+                            <div class="milestone-number">5</div>
+                            <div class="milestone-label">Portfolio Building</div>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="content-box">
+                                <h3>Create Your Data Portfolio</h3>
+                                <div class="project-ideas">
+                                    <div class="project-idea">
+                                        <h4>Comprehensive Dashboard</h4>
+                                        <p>Build an interactive dashboard that tells a compelling story with data</p>
+                                    </div>
+                                    <div class="project-idea">
+                                        <h4>Data Analysis Case Study</h4>
+                                        <p>Perform end-to-end analysis of a real-world dataset with actionable insights</p>
+                                    </div>
+                                    <div class="project-idea">
+                                        <h4>Predictive Model</h4>
+                                        <p>Develop a basic predictive model to forecast trends or outcomes</p>
+                                    </div>
+                                </div>
+                                <div class="resource-links">
+                                    <h4>Helpful Resources:</h4>
+                                    <a href="#" target="_blank">Portfolio Development Guide</a>
+                                    <a href="#" target="_blank">Public Datasets for Projects</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Developer Path -->
+            <div class="path-content" id="web-dev-path">
+                <div class="path-header">
+                    <h2>Web Developer Learning Path</h2>
+                    <div class="path-info">
+                        <div class="path-stat">
+                            <span class="stat-label">Estimated Time:</span>
+                            <span class="stat-value">9-12 months</span>
+                        </div>
+                        <div class="path-stat">
+                            <span class="stat-label">Difficulty:</span>
+                            <span class="stat-value">Intermediate to Advanced</span>
+                        </div>
+                        <div class="path-stat">
+                            <span class="stat-label">Prerequisites:</span>
+                            <span class="stat-value">Basic computer skills</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Developer roadmap content similar to data analyst -->
+                <div class="path-roadmap">
+                    <!-- Foundation milestone for web dev -->
+                    <div class="roadmap-milestone foundation">
+                        <div class="milestone-marker">
+                            <div class="milestone-number">1</div>
+                            <div class="milestone-label">Foundation</div>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="content-box">
+                                <h3>Web Development Basics</h3>
+                                <ul class="skill-checklist">
+                                    <li class="skill-item">
+                                        <span class="skill-name">HTML5 Structure & Semantics</span>
+                                        <span class="skill-level" title="Essential Skill">★★★</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <span class="skill-name">CSS3 & Responsive Design</span>
+                                        <span class="skill-level" title="Essential Skill">★★★</span>
+                                    </li>
+                                    <li class="skill-item">
+                                        <span class="skill-name">JavaScript Fundamentals</span>
+                                        <span class="skill-level" title="Essential Skill">★★★</span>
+                                    </li>
+                                </ul>
+                                <div class="resource-links">
+                                    <h4>Recommended Resources:</h4>
+                                    <a href="#" target="_blank">HTML/CSS Crash Course</a>
+                                    <a href="#" target="_blank">JavaScript Essentials</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional milestones would continue -->
+                </div>
+            </div>
+
+            <!-- UX Designer Path (content structure similar to above) -->
+            <div class="path-content" id="ux-designer-path">
+                <!-- UX Designer path content would go here -->
+            </div>
+
+            <!-- Project Manager Path (content structure similar to above) -->
+            <div class="path-content" id="project-manager-path">
+                <!-- Project Manager path content would go here -->
+            </div>
+        </div>
+
+        <!-- Progress Tracker Section -->
+        <div class="progress-tracker">
+            <h2>Track Your Progress</h2>
+            <p>Create a free account to track your progress through any learning path</p>
+            <button class="signup-button">Create Account</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Path option selection
+            const pathOptions = document.querySelectorAll('.path-option');
+            const pathContents = document.querySelectorAll('.path-content');
+            
+            pathOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Update active option
+                    pathOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show selected path content, hide others
+                    const selectedPath = this.dataset.path;
+                    pathContents.forEach(content => {
+                        if (content.id === selectedPath + '-path') {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Animation for roadmap milestones
+            const milestones = document.querySelectorAll('.roadmap-milestone');
+            
+            function checkMilestoneVisibility() {
+                milestones.forEach(milestone => {
+                    const rect = milestone.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    
+                    if (rect.top < windowHeight * 0.8) {
+                        milestone.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Initial check and scroll listener
+            checkMilestoneVisibility();
+            window.addEventListener('scroll', checkMilestoneVisibility);
+        });
+    </script>
+</body>
+</html>

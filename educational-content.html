@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Content</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="content-page sub-page">
+    <!-- Header with horizontal navigation -->
+    <header>
+        <div class="header-container">
+            <div class="left-nav">
+                <a href="index.html" class="logo">Larry E. Roberts, Jr.</a>
+                <nav class="horizontal-nav">
+                    <a href="learners-lounge.html" class="nav-link">Home</a>
+                    <a href="tutorials.html" class="nav-link">Tutorials</a>
+                    <a href="contact.html" class="nav-link">Contact Me</a>
+                </nav>
+            </div>
+            <div class="right-nav">
+                <a href="profiles.html" class="profile-icon">
+                    <img src="https://i.imgur.com/8wlPezj.jpg" alt="Learners Lounge">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="educational-content-page">
+        <div class="page-title">
+            <h1>Educational Content</h1>
+        </div>
+
+        <div class="edu-content-container">
+            <!-- Interactive Topic Selector -->
+            <div class="topic-selector">
+                <h2>Choose a Topic</h2>
+                <div class="topic-buttons">
+                    <button class="topic-btn active" data-topic="data-visualization">Data Visualization</button>
+                    <button class="topic-btn" data-topic="web-development">Web Development</button>
+                    <button class="topic-btn" data-topic="excel-tips">Excel Tips & Tricks</button>
+                    <button class="topic-btn" data-topic="presentation-skills">Presentation Skills</button>
+                </div>
+            </div>
+
+            <!-- Content Displays -->
+            <div class="content-displays">
+                <!-- Data Visualization Content -->
+                <div class="content-display active" id="data-visualization">
+                    <div class="content-header">
+                        <h2>Data Visualization Fundamentals</h2>
+                        <p>Learn how to effectively communicate insights through visual representations of data</p>
+                    </div>
+                    
+                    <div class="concept-map">
+                        <div class="concept-node main-node">
+                            <div class="node-content">
+                                <h3>Data Visualization</h3>
+                            </div>
+                            <div class="node-connections">
+                                <div class="connection" data-target="chart-types"></div>
+                                <div class="connection" data-target="design-principles"></div>
+                                <div class="connection" data-target="tools"></div>
+                                <div class="connection" data-target="storytelling"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="concept-node sub-node" id="chart-types">
+                            <div class="node-content">
+                                <h4>Chart Types</h4>
+                                <ul>
+                                    <li>Bar Charts</li>
+                                    <li>Line Charts</li>
+                                    <li>Scatter Plots</li>
+                                    <li>Pie Charts</li>
+                                    <li>Heatmaps</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="concept-node sub-node" id="design-principles">
+                            <div class="node-content">
+                                <h4>Design Principles</h4>
+                                <ul>
+                                    <li>Clarity</li>
+                                    <li>Simplicity</li>
+                                    <li>Color Theory</li>
+                                    <li>Accessibility</li>
+                                    <li>Consistency</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="concept-node sub-node" id="tools">
+                            <div class="node-content">
+                                <h4>Tools</h4>
+                                <ul>
+                                    <li>Tableau</li>
+                                    <li>Power BI</li>
+                                    <li>Excel</li>
+                                    <li>R with ggplot2</li>
+                                    <li>D3.js</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="concept-node sub-node" id="storytelling">
+                            <div class="node-content">
+                                <h4>Data Storytelling</h4>
+                                <ul>
+                                    <li>Narrative Structure</li>
+                                    <li>Context</li>
+                                    <li>Audience Analysis</li>
+                                    <li>Highlighting Insights</li>
+                                    <li>Call to Action</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="key-resources">
+                        <h3>Key Resources</h3>
+                        <div class="resource-cards">
+                            <div class="mini-resource-card">
+                                <h4>Tableau Public Gallery</h4>
+                                <p>Browse examples of exceptional data visualizations for inspiration</p>
+                                <a href="https://public.tableau.com/gallery" target="_blank">Explore</a>
+                            </div>
+                            <div class="mini-resource-card">
+                                <h4>Data Visualization Checklist</h4>
+                                <p>A comprehensive checklist for creating effective visualizations</p>
+                                <a href="#" target="_blank">Download PDF</a>
+                            </div>
+                            <div class="mini-resource-card">
+                                <h4>Color Brewer</h4>
+                                <p>Tool for selecting color schemes for maps and other visualizations</p>
+                                <a href="https://colorbrewer2.org/" target="_blank">Visit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development Content -->
+                <div class="content-display" id="web-development">
+                    <div class="content-header">
+                        <h2>Web Development Essentials</h2>
+                        <p>Master the fundamental building blocks of modern web development</p>
+                    </div>
+                    
+                    <div class="learning-path">
+                        <div class="learning-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>HTML Fundamentals</h3>
+                                <ul>
+                                    <li>Document Structure</li>
+                                    <li>Semantic Elements</li>
+                                    <li>Forms & Inputs</li>
+                                    <li>Accessibility Basics</li>
+                                </ul>
+                                <div class="step-resources">
+                                    <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML" target="_blank">MDN HTML Guide</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="learning-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>CSS Styling</h3>
+                                <ul>
+                                    <li>Selectors & Properties</li>
+                                    <li>Box Model</li>
+                                    <li>Flexbox & Grid</li>
+                                    <li>Responsive Design</li>
+                                </ul>
+                                <div class="step-resources">
+                                    <a href="https://css-tricks.com/guides/" target="_blank">CSS Tricks Guides</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="learning-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>JavaScript Basics</h3>
+                                <ul>
+                                    <li>Syntax & Data Types</li>
+                                    <li>DOM Manipulation</li>
+                                    <li>Event Handling</li>
+                                    <li>Fetch API</li>
+                                </ul>
+                                <div class="step-resources">
+                                    <a href="https://javascript.info/" target="_blank">JavaScript.info</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="learning-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Building Projects</h3>
+                                <ul>
+                                    <li>Portfolio Website</li>
+                                    <li>Interactive Forms</li>
+                                    <li>API Integration</li>
+                                    <li>Responsive Layouts</li>
+                                </ul>
+                                <div class="step-resources">
+                                    <a href="https://www.frontendmentor.io/" target="_blank">Frontend Mentor Challenges</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="web-dev-tools">
+                        <h3>Essential Tools</h3>
+                        <div class="tools-grid">
+                            <div class="tool-item">
+                                <h4>VS Code</h4>
+                                <p>Code editor</p>
+                            </div>
+                            <div class="tool-item">
+                                <h4>Chrome DevTools</h4>
+                                <p>Debugging</p>
+                            </div>
+                            <div class="tool-item">
+                                <h4>GitHub</h4>
+                                <p>Version control</p>
+                            </div>
+                            <div class="tool-item">
+                                <h4>Figma</h4>
+                                <p>Design tool</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Excel Tips Content -->
+                <div class="content-display" id="excel-tips">
+                    <div class="content-header">
+                        <h2>Excel Tips & Tricks</h2>
+                        <p>Level up your spreadsheet skills with these power user techniques</p>
+                    </div>
+                    
+                    <div class="excel-categories">
+                        <div class="excel-category">
+                            <div class="category-icon">F</div>
+                            <div class="category-content">
+                                <h3>Formulas & Functions</h3>
+                                <div class="excel-tips">
+                                    <div class="excel-tip">
+                                        <h4>VLOOKUP vs. INDEX-MATCH</h4>
+                                        <p>Learn when and why to use INDEX-MATCH instead of VLOOKUP for more flexible lookups</p>
+                                    </div>
+                                    <div class="excel-tip">
+                                        <h4>Array Formulas</h4>
+                                        <p>Perform powerful calculations across ranges without helper columns</p>
+                                    </div>
+                                    <div class="excel-tip">
+                                        <h4>SUMIFS & COUNTIFS</h4>
+                                        <p>Master multi-criteria calculations for more refined data analysis</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="excel-category">
+                            <div class="category-icon">P</div>
+                            <div class="category-content">
+                                <h3>PivotTables</h3>
+                                <div class="excel-tips">
+                                    <div class="excel-tip">
+                                        <h4>Data Preparation</h4>
+                                        <p>Structure your data properly to create effective PivotTables</p>
+                                    </div>
+                                    <div class="excel-tip">
+                                        <h4>Calculated Fields</h4>
+                                        <p>Add custom calculations to your PivotTables for deeper insights</p>
+                                    </div>
+                                    <div class="excel-tip">
+                                        <h4>Slicers & Timelines</h4>
+                                        <p>Create interactive filtering controls for your PivotTables</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="excel-category">
+                            <div class="category-icon">A</div>
+                            <div class="category-content">
+                                <h3>Automation</h3>
+                                <div class="excel-tips">
+                                    <div class="excel-tip">
+                                        <h4>Keyboard Shortcuts</h4>
+                                        <p>Speed up your workflow with essential keyboard combinations</p>
+                                    </div>
+                                    <div class="excel-tip">
+                                        <h4>Data Validation</h4>
+                                        <p>Create dropdown lists and input constraints for cleaner data entry</p>
+                                    </div>
+                                    <div class="excel-tip">
+                                        <h4>Basic Macros</h4>
+                                        <p>Record simple macros to automate repetitive tasks</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="excel-templates">
+                        <h3>Download Templates</h3>
+                        <div class="template-cards">
+                            <div class="template-card">
+                                <h4>Budget Tracker</h4>
+                                <p>Complete with formulas and charts</p>
+                                <a href="#" class="template-download">Download</a>
+                            </div>
+                            <div class="template-card">
+                                <h4>Project Timeline</h4>
+                                <p>Gantt chart with automated formatting</p>
+                                <a href="#" class="template-download">Download</a>
+                            </div>
+                            <div class="template-card">
+                                <h4>Dashboard Template</h4>
+                                <p>Interactive data visualization</p>
+                                <a href="#" class="template-download">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Presentation Skills Content -->
+                <div class="content-display" id="presentation-skills">
+                    <div class="content-header">
+                        <h2>Presentation Skills</h2>
+                        <p>Create and deliver presentations that engage, inform, and inspire your audience</p>
+                    </div>
+                    
+                    <div class="presentation-framework">
+                        <h3>The S.T.A.R. Presentation Framework</h3>
+                        <div class="framework-steps">
+                            <div class="framework-step">
+                                <h4>S - Story</h4>
+                                <p>Begin with a compelling narrative that captures attention and establishes relevance</p>
+                                <div class="step-tips">
+                                    <ul>
+                                        <li>Use personal anecdotes or case studies</li>
+                                        <li>Create emotional connection</li>
+                                        <li>Establish the "why" behind your message</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="framework-step">
+                                <h4>T - Teach</h4>
+                                <p>Present your core content in a clear, structured, and digestible format</p>
+                                <div class="step-tips">
+                                    <ul>
+                                        <li>Use the rule of three for main points</li>
+                                        <li>Support with relevant data and visuals</li>
+                                        <li>Break complex ideas into simpler components</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="framework-step">
+                                <h4>A - Apply</h4>
+                                <p>Demonstrate practical applications and relevance to your audience</p>
+                                <div class="step-tips">
+                                    <ul>
+                                        <li>Include real-world examples</li>
+                                        <li>Address specific audience challenges</li>
+                                        <li>Provide actionable takeaways</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="framework-step">
+                                <h4>R - Reinforce</h4>
+                                <p>Strengthen key messages and ensure they stick with your audience</p>
+                                <div class="step-tips">
+                                    <ul>
+                                        <li>Summarize main points</li>
+                                        <li>Circle back to opening story</li>
+                                        <li>End with a clear call to action</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="presentation-resources">
+                        <div class="resources-column">
+                            <h3>Design Tips</h3>
+                            <ul class="resource-list">
+                                <li>Use high-quality, relevant images</li>
+                                <li>Limit text to 6 lines per slide</li>
+                                <li>Maintain consistent visual style</li>
+                                <li>Choose readable fonts (min. 24pt)</li>
+                                <li>Use contrasting colors for text/background</li>
+                                <li>Include only one key idea per slide</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="resources-column">
+                            <h3>Delivery Techniques</h3>
+                            <ul class="resource-list">
+                                <li>Practice with a timer</li>
+                                <li>Record yourself to identify areas for improvement</li>
+                                <li>Use deliberate pauses for emphasis</li>
+                                <li>Maintain eye contact with different audience members</li>
+                                <li>Incorporate appropriate gestures</li>
+                                <li>Modulate your voice to maintain engagement</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="presentation-examples">
+                        <h3>Model Presentations</h3>
+                        <div class="example-cards">
+                            <div class="example-card">
+                                <h4>TED Talk: How Great Leaders Inspire Action</h4>
+                                <p>Simon Sinek demonstrates the power of starting with "why"</p>
+                                <a href="https://www.youtube.com/watch?v=qp0HIF3SfI4" target="_blank" class="example-link">Watch</a>
+                            </div>
+                            <div class="example-card">
+                                <h4>Steve Jobs: iPhone Introduction</h4>
+                                <p>A masterclass in product presentation and storytelling</p>
+                                <a href="https://www.youtube.com/watch?v=MnrJzXM7a6o" target="_blank" class="example-link">Watch</a>
+                            </div>
+                            <div class="example-card">
+                                <h4>Hans Rosling: Global Population Growth</h4>
+                                <p>Exemplary data visualization and narration</p>
+                                <a href="https://www.youtube.com/watch?v=fTznEIZRkLg" target="_blank" class="example-link">Watch</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Topic switching functionality
+            const topicButtons = document.querySelectorAll('.topic-btn');
+            const contentDisplays = document.querySelectorAll('.content-display');
+            
+            topicButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    topicButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show selected content, hide others
+                    const selectedTopic = this.dataset.topic;
+                    contentDisplays.forEach(display => {
+                        if (display.id === selectedTopic) {
+                            display.classList.add('active');
+                        } else {
+                            display.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Initialize concept map connections (for data visualization topic)
+            const mainNode = document.querySelector('.main-node');
+            if (mainNode) {
+                const connections = mainNode.querySelectorAll('.connection');
+                connections.forEach(connection => {
+                    const targetId = connection.dataset.target;
+                    const targetNode = document.getElementById(targetId);
+                    if (targetNode) {
+                        connection.addEventListener('mouseenter', () => {
+                            targetNode.classList.add('highlight');
+                        });
+                        connection.addEventListener('mouseleave', () => {
+                            targetNode.classList.remove('highlight');
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
