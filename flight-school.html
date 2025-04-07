@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight School</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="content-page sub-page flight-school-page">
+    <!-- Header with horizontal navigation -->
+    <header>
+        <div class="header-container">
+            <div class="left-nav">
+                <a href="index.html" class="logo">Larry E. Roberts, Jr.</a>
+                <nav class="horizontal-nav">
+                    <a href="hiring-team.html" class="nav-link">Home</a>
+                    <a href="resume.html" class="nav-link">Resume</a>
+                    <a href="work-samples.html" class="nav-link">Work Samples</a>
+                    <a href="contact.html" class="nav-link">Contact Me</a>
+                </nav>
+            </div>
+            <div class="right-nav">
+                <a href="profiles.html" class="profile-icon">
+                    <img src="https://i.imgur.com/REPLACE_WITH_YOUR_IMGUR_ID.png" alt="Hiring Team">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flight-school-main">
+        <div class="page-title">
+            <h1>Flight School</h1>
+        </div>
+
+        <div class="flight-container">
+            <div class="flight-info">
+                <p>Pursuing my private pilot license has been one of my most rewarding personal journeys. Click the flight hours counter below to see my current progress!</p>
+            </div>
+            
+            <div class="counter-container">
+                <button id="counter-button" class="counter-button">
+                    <div class="counter-display">
+                        <span id="counter">0</span>
+                        <span class="counter-label">FLIGHT HOURS</span>
+                    </div>
+                </button>
+                
+                <div class="counter-details">
+                    <p>Click to reveal my flight hours</p>
+                </div>
+            </div>
+            
+            <div class="flight-journey">
+                <h2>My Flight Journey</h2>
+                <div class="journey-steps">
+                    <div class="journey-step completed">
+                        <div class="step-icon">✓</div>
+                        <div class="step-content">
+                            <h3>First Discovery Flight</h3>
+                            <p>First time in the cockpit</p>
+                        </div>
+                    </div>
+                    
+                    <div class="journey-step completed">
+                        <div class="step-icon">✓</div>
+                        <div class="step-content">
+                            <h3>Basic Maneuvers</h3>
+                            <p>Learning to control the aircraft</p>
+                        </div>
+                    </div>
+                    
+                    <div class="journey-step completed">
+                        <div class="step-icon">✓</div>
+                        <div class="step-content">
+                            <h3>Take-offs & Landings</h3>
+                            <p>Mastering the most critical skills</p>
+                        </div>
+                    </div>
+                    
+                    <div class="journey-step in-progress">
+                        <div class="step-icon">→</div>
+                        <div class="step-content">
+                            <h3>Cross-Country Flying</h3>
+                            <p>Navigation between airports</p>
+                        </div>
+                    </div>
+                    
+                    <div class="journey-step">
+                        <div class="step-icon">○</div>
+                        <div class="step-content">
+                            <h3>Solo Flight</h3>
+                            <p>Flying without an instructor</p>
+                        </div>
+                    </div>
+                    
+                    <div class="journey-step">
+                        <div class="step-icon">○</div>
+                        <div class="step-content">
+                            <h3>Private Pilot License</h3>
+                            <p>Final check ride and certification</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const counterButton = document.getElementById('counter-button');
+            const counterDisplay = document.getElementById('counter');
+            let isAnimating = false;
+            
+            counterButton.addEventListener('click', function() {
+                if (isAnimating) return;
+                isAnimating = true;
+                
+                const targetValue = 10; // Your actual flight hours
+                let currentValue = 0;
+                
+                // Update counter display
+                const updateCounter = () => {
+                    if (currentValue <= targetValue) {
+                        counterDisplay.textContent = currentValue;
+                        currentValue++;
+                        setTimeout(updateCounter, 200); // Speed of counting animation
+                    } else {
+                        isAnimating = false;
+                        
+                        // After counter finishes, show additional info
+                        document.querySelector('.counter-details p').textContent = "Currently building hours toward my private pilot license";
+                        
+                        // Add a visual flourish
+                        counterButton.classList.add('completed');
+                    }
+                };
+                
+                updateCounter();
+            });
+            
+            // Reset counter if navigating away and back
+            window.addEventListener('pageshow', function() {
+                counterDisplay.textContent = '0';
+                counterButton.classList.remove('completed');
+                document.querySelector('.counter-details p').textContent = "Click to reveal my flight hours";
+                isAnimating = false;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work History</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="content-page sub-page">
+    <!-- Header with horizontal navigation -->
+    <header>
+        <div class="header-container">
+            <div class="left-nav">
+                <a href="index.html" class="logo">Larry E. Roberts, Jr.</a>
+                <nav class="horizontal-nav">
+                    <a href="hiring-team.html" class="nav-link">Home</a>
+                    <a href="resume.html" class="nav-link">Resume</a>
+                    <a href="work-samples.html" class="nav-link">Work Samples</a>
+                    <a href="contact.html" class="nav-link">Contact Me</a>
+                </nav>
+            </div>
+            <div class="right-nav">
+                <a href="profiles.html" class="profile-icon">
+                    <img src="https://i.imgur.com/zaOTwAm.jpg" alt="Hiring Team">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="timeline-page">
+        <div class="page-title">
+            <h1>Work History & Achievements</h1>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h2>Scientific Program Manager</h2>
+                    <h3>Axle Informatics, National Insitutes of Health (NIH) | Sep 2023 -  Feb 2025</h3>
+                    <p>Led the implementation of streamlined data visualization dashboards, reducing reporting turnaround time by 35% and enhancing clarity in scientific communications across interdisciplinary teams.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h2>Doctor of Pharmacy (PharmD.)</h2>
+                    <h3>Howard University, College of Pharmacy | May 2023</h3>
+                    <p>🥼</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h2>Pharmacy Extern, Data Analytics</h2>
+                    <h3>DevTech Systems | Mar 2023 - Apr 2023</h3>
+                    <p>Built interactive dashboards using Tableau and R to analyze opioid prescribing trends, uncovering prescribing anomalies that informed Medicare policy adjustments.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h2>Pharmacy Extern, Regulatory and Health Policy</h2>
+                    <h3>Centers for Disease Control and Prevention | Nov 2022 - Dec 2022</h3>
+                    <p>Developed evidence-based training modules on HIV medical care retention, resulting in a measurable improvement in stakeholder adoption and program compliance.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h2>Pharmacy Extern, Ambulatory Care</h2>
+                    <h3>Indian Health Service (IHS) Warm Springs Health and Wellness Center | Oct 2022 - Nov 2022</h3>
+                    <p>Implemented targeted clinical services for vaccine and diabetes management, increasing patient medication adherence rates by 20% within the Warm Springs Health community.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h2>Public Health Data Analyst (Intern)</h2>
+                    <h3>John Hopkins Hospital | Summer 2021</h3>
+                    <p>Created advanced R-coded visualizations for COVID-19 data analytics, increasing the department’s ability to rapidly identify and respond to emerging case trends by 50%.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h2>Senior Health Planner</h2>
+                    <h3>Houston Health Department | Aug 2018 - May 2023</h3>
+                    <p>Designed and launched comprehensive HIV prevention reports and community health visualizations, increasing stakeholder engagement by 25% and strengthening local policy decisions.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h2>Epidemiologist - Surveillance</h2>
+                    <h3>Houston Health Department | Jun 2016 - Aug 2018</h3>
+                    <p>Managed detailed surveillance investigations for over 3,000 HIV cases, improving client linkage to care by 30% through targeted interventions and stakeholder partnerships.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h2>Master of Public Health - Epidemiology (MPH)</h2>
+                    <h3>Florida A&M Univeristy, Institute of Public Health | May 2015</h3>
+                    <p>🎓</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h2>Bachelor of Science - Molecular Cell Biology (BS)</h2>
+                    <h3>Florida A&M University | </h3>
+                    <p>🎓</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS animation library
+            AOS.init({
+                duration: 800,
+                offset: 100,
+                once: false
+            });
+            
+            // Add scroll event listener for animation
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            function checkScroll() {
+                timelineItems.forEach(item => {
+                    const itemTop = item.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    if (itemTop < windowHeight * 0.8) {
+                        item.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Initial check and add scroll listener
+            checkScroll();
+            window.addEventListener('scroll', checkScroll);
+        });
+    </script>
+</body>
+</html>
