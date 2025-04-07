@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (landingLogo) {
         landingLogo.addEventListener('click', function() {
             // Play Netflix sound from Google Drive or other audio hosting
-            const netflixSound = new Audio('https://drive.google.com/file/d/11NChYo1Uumg9FJZ-OVHxT2Bd6eaFxo6v/view?usp=drive_link');
+            const netflixSound = new Audio('https://raw.githubusercontent.com/lrobertsjr/Professional-Portfolio/main/netflix-sound.mp3');
             // Alternative hosting options:
             // const netflixSound = new Audio('https://your-audio-hosting-site.com/netflix-sound.mp3');
             netflixSound.play();
