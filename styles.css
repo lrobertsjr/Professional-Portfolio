@@ -4070,6 +4070,7 @@ header {
     padding: 1.5rem;
     border-radius: 8px;
     border-left: 4px solid #E50914;
+    border-right: 4px solid #E50914;
     text-align: left;
     margin-bottom: 1rem;
 }
