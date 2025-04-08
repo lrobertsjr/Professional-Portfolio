@@ -2772,155 +2772,7 @@
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
-}/* Resume Page */
-.resume-page {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
 
-.resume-actions {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.resume-button {
-    background-color: #E50914;
-    color: white;
-    padding: 0.7rem 1.5rem;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.resume-button:hover {
-    background-color: #F40612;
-    transform: scale(1.05);
-}
-
-.resume-container {
-    background: rgba(30, 30, 30, 0.7);
-    border-radius: 8px;
-    padding: 2.5rem;
-    margin-top: 2rem;
-    color: #e5e5e5;
-    line-height: 1.6;
-}
-
-.resume-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2.5rem;
-    border-bottom: 1px solid #444;
-    padding-bottom: 1.5rem;
-}
-
-.resume-name h2 {
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 0.5rem;
-}
-
-.resume-title {
-    font-size: 1.2rem;
-    color: #E50914;
-}
-
-.resume-contact {
-    text-align: right;
-}
-
-.resume-contact p {
-    margin-bottom: 0.5rem;
-}
-
-.resume-contact a {
-    color: #E50914;
-    transition: color 0.3s ease;
-}
-
-.resume-contact a:hover {
-    color: #F40612;
-    text-decoration: underline;
-}
-
-.resume-section {
-    margin-bottom: 2.5rem;
-}
-
-.section-heading {
-    font-size: 1.5rem;
-    color: #E50914;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #444;
-    padding-bottom: 0.5rem;
-}
-
-.section-content {
-    padding-left: 1rem;
-}
-
-.resume-job, .resume-education {
-    margin-bottom: 2rem;
-}
-
-.job-header {
-    margin-bottom: 1rem;
-}
-
-.job-header h4, .resume-education h4 {
-    font-size: 1.3rem;
-    color: white;
-    margin-bottom: 0.3rem;
-}
-
-.job-company, .education-institution {
-    font-size: 1.1rem;
-    margin-bottom: 0.3rem;
-}
-
-.job-duration, .education-date {
-    font-size: 0.9rem;
-    color: #999;
-    margin-bottom: 0.5rem;
-}
-
-.job-duties {
-    padding-left: 1.5rem;
-}
-
-.job-duties li {
-    margin-bottom: 0.5rem;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-}
-
-.skill-category h4 {
-    color: white;
-    margin-bottom: 0.8rem;
-    font-size: 1.1rem;
-}
-
-.skill-category ul {
-    padding-left: 1.2rem;
-}
-
-.skill-category li {
-    margin-bottom: 0.5rem;
-}
-
-.certification-list {
-    padding-left: 1.2rem;
-}
-
-.certification-list li {
-    margin-bottom: 0.8rem;
 }/* Side Projects Page */
 .side-projects-page {
     max-width: 1200px;
@@ -3480,65 +3332,6 @@
     font-size: 2.5rem;
     font-weight: 500;
     color: white;
-}
-
-/* Resume Highlights Page */
-.highlight-page {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.view-resume-btn {
-    display: inline-block;
-    background-color: #E50914;
-    color: white;
-    padding: 0.7rem 1.5rem;
-    border-radius: 4px;
-    font-weight: bold;
-    margin-top: 1rem;
-    transition: all 0.3s ease;
-}
-
-.view-resume-btn:hover {
-    background-color: #F40612;
-    transform: scale(1.05);
-}
-
-.highlights-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.highlight-card {
-    background: rgba(30, 30, 30, 0.7);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.highlight-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    outline: 2px solid #E50914;
-}
-
-.highlight-content {
-    padding: 2rem;
-}
-
-.highlight-content h2 {
-    color: white;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.highlight-content p {
-    color: #cccccc;
-    line-height: 1.6;
 }
 
 /* Work History Timeline Page */
@@ -4270,4 +4063,45 @@ header {
     0% { transform: scale(1); }
     50% { transform: scale(1.2); }
     100% { transform: scale(1); }
+}
+/* Banner welcome message styles */
+.banner-welcome {
+    position: absolute;
+    top: 20px;
+    left: 4%;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #E50914;
+    z-index: 10;
+}
+
+.banner-welcome h2 {
+    color: #E50914;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.banner-welcome p {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* Responsive adjustments for banner welcome */
+@media (max-width: 768px) {
+    .banner-welcome {
+        max-width: 92%;
+        padding: 1rem;
+    }
+    
+    .banner-welcome h2 {
+        font-size: 1.5rem;
+    }
+    
+    .banner-welcome p {
+        font-size: 0.9rem;
+    }
 }
