@@ -4137,6 +4137,14 @@ header {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
+/* Add this specific style for your gaming card image */
+.card[href="gaming.html"] img {
+    width: 100%;
+    height: 150px; /* Fixed height to match other cards */
+    object-fit: cover; /* This ensures the image covers the area without distortion */
+    object-position: center; /* Centers the image */
+}
+
 /* Gaming Hero Section */
 .gaming-hero {
     background: linear-gradient(to bottom, #000000, #141414);
