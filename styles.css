@@ -1,3 +1,274 @@
+/* Aptitudes Page */
+.aptitudes-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #cccccc;
+    margin-top: 0.5rem;
+}
+
+.aptitudes-intro {
+    display: flex;
+    gap: 3rem;
+    margin: 3rem 0;
+    align-items: center;
+}
+
+.intro-content {
+    flex: 1;
+}
+
+.intro-content h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.intro-content p {
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.intro-image {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.intro-image img {
+    width: 100%;
+    display: block;
+}
+
+.aptitude-visualization {
+    margin: 4rem 0;
+}
+
+.aptitude-visualization h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.visualization-container {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.radar-chart {
+    flex: 1;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.radar-svg {
+    width: 100%;
+    height: auto;
+}
+
+.aptitude-point {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.aptitude-point:hover {
+    fill: #FF0F1F;
+}
+
+.aptitude-details {
+    flex: 1;
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    padding: 2rem;
+    min-height: 300px;
+}
+
+.details-panel {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.details-panel.active {
+    display: block;
+}
+
+.details-panel h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aptitude-score {
+    color: #E50914;
+    font-weight: bold;
+}
+
+.details-panel p {
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.details-panel h4 {
+    color: #E50914;
+    margin-bottom: 0.8rem;
+}
+
+.details-panel ul {
+    color: #cccccc;
+    padding-left: 1.5rem;
+}
+
+.details-panel li {
+    margin-bottom: 0.5rem;
+}
+
+.career-alignment {
+    margin: 4rem 0;
+}
+
+.career-alignment h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.career-alignment > p {
+    color: #cccccc;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.career-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.career-card {
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.career-card:hover {
+    transform: translateY(-5px);
+    outline: 4px solid #E50914;
+}
+
+.career-icon {
+    height: 150px;
+    overflow: hidden;
+}
+
+.career-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.career-info {
+    padding: 1.5rem;
+}
+
+.career-info h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.career-info p {
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.matching-aptitudes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.aptitude-tag {
+    background: rgba(229, 9, 20, 0.2);
+    color: #e5e5e5;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.aptitude-application {
+    margin: 4rem 0;
+}
+
+.aptitude-application h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.application-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.application-example {
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.application-example:hover {
+    transform: scale(1.02);
+    outline: 4px solid #E50914;
+}
+
+.application-example h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.application-example p {
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.application-example ul {
+    color: #cccccc;
+    padding-left: 1.5rem;
+}
+
+.application-example li {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+    .aptitudes-intro,
+    .visualization-container {
+        flex-direction: column;
+    }
+    
+    .radar-chart {
+        margin-bottom: 2rem;
+    }
+}
 /* Gallery container (hobbies page) - fixing syntax error */
 .gallery-container {
     display: none;
