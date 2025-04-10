@@ -3339,6 +3339,8 @@ header {
     height: 80%; /* Fixed height to match other cards */
     object-fit: cover;
     object-position: center; /* Centers the image */
+    font-size: 1.2rem;
+    color: white;
 }
 
 /* Gaming Hero Section */
@@ -4308,10 +4310,3 @@ header {
     font-weight: 600;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
-.project-dashboard-btn:hover {
-    background-color: #0088CC;
-    transform: scale(1.05);
-}
-
-/* Add these styles to your existing styles.css file */
