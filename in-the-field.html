@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In the Field</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="content-page photo-album-page">
+    <!-- Header with horizontal navigation -->
+    <header>
+        <div class="header-container">
+            <div class="left-nav">
+                <a href="index.html" class="logo">Larry E. Roberts, Jr.</a>
+            </div>
+            <div class="right-nav">
+                <a href="profiles.html" class="profile-icon">
+                    <img src="https://i.imgur.com/zaOTwAm.jpg" alt="Hiring Team">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page title and description -->
+        <div class="page-header">
+            <h1>In the <span class="highlight">Field</span></h1>
+            <p class="subtitle">A visual journey serving in the medical and outreach communities</p>
+        </div>
+
+        <!-- Netflix Container for Introduction -->
+        <div class="netflix-container">
+            <div class="netflix-card">
+                <div class="glow-effect"></div>
+                <div class="card-content">
+                    <h2 class="netflix-heading">Professional <span class="highlight">Moments</span></h2>
+                    <p class="netflix-text">These images capture key moments from my professional journey - from client presentations and team collaborations to field research and technical demonstrations. Each photo represents my commitment to excellence and my ability to thrive in diverse scientific and technical environments.</p>
+                    <div class="response-time">
+                        <i class="fas fa-camera"></i>
+                        <p>Click on any image to view details and read the story behind each professional moment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Photo Album -->
+        <section class="photo-album">
+            <div class="netflix-photo-container">
+                <div class="netflix-photo-card">
+                    <!-- Photo Grid -->
+                    <div class="photo-grid">
+                        <!-- Each photo item -->
+                        <div class="photo-item" onclick="openLightbox(0)">
+                            <img src="https://i.imgur.com/placeholder1.jpg" alt="Field Experience 1">
+                            <div class="photo-overlay">
+                                <h3>Client Meeting</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="photo-item" onclick="openLightbox(1)">
+                            <img src="https://i.imgur.com/placeholder2.jpg" alt="Field Experience 2">
+                            <div class="photo-overlay">
+                                <h3>Conference Presentation</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="photo-item" onclick="openLightbox(2)">
+                            <img src="https://i.imgur.com/placeholder3.jpg" alt="Field Experience 3">
+                            <div class="photo-overlay">
+                                <h3>Laboratory Work</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="photo-item" onclick="openLightbox(3)">
+                            <img src="https://i.imgur.com/placeholder4.jpg" alt="Field Experience 4">
+                            <div class="photo-overlay">
+                                <h3>Team Collaboration</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="photo-item" onclick="openLightbox(4)">
+                            <img src="https://i.imgur.com/placeholder5.jpg" alt="Field Experience 5">
+                            <div class="photo-overlay">
+                                <h3>Field Research</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="photo-item" onclick="openLightbox(5)">
+                            <img src="https://i.imgur.com/placeholder6.jpg" alt="Field Experience 6">
+                            <div class="photo-overlay">
+                                <h3>Product Demonstration</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox for enlarged photos -->
+        <div id="photo-lightbox" class="lightbox">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <div class="lightbox-content">
+                <div class="lightbox-navigation">
+                    <button class="nav-button prev" onclick="changePhoto(-1)">&#10094;</button>
+                    <div class="lightbox-image-container">
+                        <img id="lightbox-image" src="">
+                    </div>
+                    <button class="nav-button next" onclick="changePhoto(1)">&#10095;</button>
+                </div>
+                <div class="lightbox-caption">
+                    <h3 id="lightbox-title"></h3>
+                    <p id="lightbox-description"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Netflix styled navigation buttons -->
+        <div class="netflix-buttons navigation-buttons">
+            <a href="index.html" class="netflix-button linkedin-btn">
+                <i class="fas fa-arrow-left"></i>Back to Portfolio
+            </a>
+            <a href="contact.html" class="netflix-button email-btn">
+                <i class="fas fa-envelope"></i>Contact Me
+            </a>
+        </div>
+    </main>
+
+     <!-- JavaScript for the interactive photo album -->
+     <script>
+        // Photo data - replace with your actual photos and descriptions
+        const photoData = [
+            {
+                src: "https://i.imgur.com/BEykXga.jpg",
+                title: "Enviornmental Monitoring Meeting",
+                description: "Presenting Thesis Research to the Academic Defense Committee."
+            },
+            {
+                src: "https://i.imgur.com/gcQQwg2.jpg",
+                title: "Conference Exhibition",
+                description: "Representing the Houston Health Department as Exhibitor for the presentation of the 2017 HIV Care Continuum at the NAESM Conference."
+            },
+            {
+                src: "https://i.imgur.com/Jm94klm.jpg",
+                title: "Conference Exhibition",
+                description: "Presenting at the 2017 NAESM Conference in Atlanta, Georgia. This conference focused on HIV prevention and care strategies."
+            },
+            {
+                src: "https://i.imgur.com/teKPI3c.jpg",
+                title: "U=U Campaign",
+                description: "Participating in the U=U campaign to raise awareness about the undetectable = untransmittable message in the community."
+            },
+            {
+                src: "https://i.imgur.com/Grhc9XH.jpg",
+                title: "U=U Campaign",
+                description: "Participating in the U=U campaign to raise awareness about the undetectable = untransmittable message in the community."
+            },
+            {
+                src: "https://i.imgur.com/Gayxn6U.jpg",
+                title: "STD/STI Prevention Outreach",
+                description: "Engaging with the community to promote STD/STI prevention and awareness. This outreach program was crucial in educating the public about safe practices and available resources."
+            },
+            {
+                src: "https://i.imgur.com/npqrUT2.jpg",
+                title: "Testing Clinic Outreach", 
+                description: "Bringing care to the community — A mobile STI/STD testing clinic set up to provide free, confidential screenings and sexual health resources directly where people live, work, and gather."
+            },
+            {
+                src: "https://i.imgur.com/t6PCjBh.jpg",
+                title: "Testing Clinic Outreach",
+                description: "Bringing care to the community — A mobile STI/STD testing clinic set up to provide free, confidential screenings and sexual health resources directly where people live, work, and gather."         
+            },    
+            {
+                src: "https://i.imgur.com/VK2m5OE.jpg",
+                title: "Testing Clinic Outreach",
+                description: "Bringing care to the community — A mobile STI/STD testing clinic set up to provide free, confidential screenings and sexual health resources directly where people live, work, and gather."        
+            },    {
+                src: "https://i.imgur.com/de1Ymk1.jpg",
+                title: "Health Education Outreach",
+                description: "Engaging with the community to promote health education and awareness. This outreach program was crucial in educating the public about safe practices and available resources."           
+            },    {
+                src: "https://i.imgur.com/XgMDy1I.jpg",
+                title: "STD/STI Prevention Outreach",
+                description: "Engaging with the community to promote STD/STI prevention and awareness. This outreach program was crucial in educating the public about safe practices and available resources."         
+            },    {
+                src: "https://i.imgur.com/onHJVFY.jpg",
+                title: "Health Screening Event",
+                description: "Participating in a health screening event to provide free health checks and resources to the community. This initiative aimed to promote health awareness and preventive care."         
+            },    {
+                src: "https://i.imgur.com/qKikBy6.jpg",
+                title: "Mobile Testing Unit",
+                description: "Bringing care to the community — A mobile STI/STD testing clinic set up to provide free, confidential screenings and sexual health resources directly where people live, work, and gather."          
+            },    {
+                src: "https://i.imgur.com/LPhzxo5.jpg",
+                title: "Medical Monitoring Project Meeting",
+                description: "Representing the Houston Health Department as Surveillance Investigator at the Joint Medical Monitoring Project-National HIV Behavioral Surveillance Meeting."           
+            },    {
+                src: "https://i.imgur.com/9Tq90RY.jpg",
+                title: "Houston KHOU11 News Interview",
+                description: "Interviewed by KHOU11 News to discuss the importance of HIV testing and prevention in the community. This opportunity allowed me to share valuable insights and raise awareness about public health issues."          
+            },    {
+                src: "https://i.imgur.com/Nx7cRjM.jpg",
+                title: "Houston KHOU11 News Interview",
+                description: "Interviewed by KHOU11 News to discuss the importance of HIV testing and prevention in the community. This opportunity allowed me to share valuable insights and raise awareness about public health issues."          
+            },    {
+                src: "https://i.imgur.com/YRWKIGn.jpg",
+                title: "Empowerement Brunch",
+                description: "Participating in a community empowerment event to promote health education and awareness while recognize those fighting to end HIV."           
+            },    {
+                src: "https://i.imgur.com/5DoEgbH.jpg",
+                title: "Empowerement Brunch",
+                description: "Participating in a community empowerment event to promote health education and awareness while recognize those fighting to end HIV."        
+            },    {
+                src: "https://i.imgur.com/hED8Pwb.jpg",
+                title: "Empowerement Brunch",
+                description: "Participating in a community empowerment event to promote health education and awareness while recognize those fighting to end HIV."         
+            },    {
+                src: "https://i.imgur.com/P6w40zC.jpg",
+                title: "Houston Pride Parade",
+                description: "Promoting wellness with pride — Health educators engaging with attendees at a Pride Parade, offering inclusive resources, free STI/STD screenings, and empowering conversations about sexual health and well-being."
+            },    {
+                src: "https://i.imgur.com/UwaKTqF.jpg",
+                title: "Student Health Fair",
+                description: "Empowering students through prevention — A campus health fair offering free blood pressure and diabetes screenings, raising awareness about chronic disease prevention and healthy lifestyle choices."           
+            },    {
+                src: "https://i.imgur.com/bsstbrF.jpg",
+                title: "Pharmacy Lobbying Event",
+                description: "Advocating for pharmacy access — Engaging with legislators to promote policies that enhance pharmacy services and improve patient care in the community."           
+            },    {
+                src: "https://i.imgur.com/jDYrBYJ.jpg",
+                title: "CPR Training",
+                description: "Participating in a CPR training session to enhance emergency response skills. This training is essential for healthcare professionals to provide immediate assistance in critical situations."          
+            },    {
+                src: "https://i.imgur.com/JJkw1Rl.jpg",
+                title: "Student Pharmacy Association Event",
+                description: "Engaging with pharmacy students and professionals at a networking event. Building relationships and sharing insights on the latest trends in pharmacy practice is crucial for professional growth and collaboration."           
+            },    {
+                src: "https://i.imgur.com/PFHJxhv.jpg",
+                title: "Student Pharmacy Association Event",
+                description: "Engaging with pharmacy students and professionals at a networking event. Building relationships and sharing insights on the latest trends in pharmacy practice is crucial for professional growth and collaboration."           
+            },    {
+                src: "https://i.imgur.com/ucH5dO0.jpg",
+                title: "Student Pharmacy Association Event",
+                description: "Engaging with pharmacy students and professionals at a networking event. Building relationships and sharing insights on the latest trends in pharmacy practice is crucial for professional growth and collaboration."          
+            },    {
+                src: "https://i.imgur.com/7IIw2BZ.jpg",
+                title: "John Hopkins Hosptial Pharmacy Internship",
+                description: "Participating in a pharmacy internship at John Hopkins Hospital. This experience provided valuable insights into clinical pharmacy practice and patient care."           
+            },    {
+                src: "https://i.imgur.com/BFHA3SJ.jpg",
+                title: "John Hopkins Hosptial Pharmacy Internship",
+                description: "Participating in a pharmacy internship at John Hopkins Hospital. This experience provided valuable insights into clinical pharmacy practice and patient care."         
+            },    {
+                src: "https://i.imgur.com/mSNAwPe.jpg",
+                title: "All of Us Research Program Pie Day Event",
+                description: "Participating in the All of Us Research Program Pie Day event to promote precision medicine research and community engagement. This initiative aimed to raise awareness about the importance of diverse participation in health studies."          
+            },    {
+                src: "https://i.imgur.com/daxhw6m.jpg",
+                title: "All of Us Research Program All Hands Meeting",
+                description: "Participating in the All of Us Research Program All Hands meeting to discuss progress and strategies for community engagement. This initiative aimed to raise awareness about the importance of diverse participation in health studies."        
+            },    {
+                src: "https://i.imgur.com/DGCuPq5.jpg",
+                title: "All of Us Research Program",
+                description: "Participating in the All of Us Research Program to promote precision medicine research and community engagement. This initiative aimed to raise awareness about the importance of diverse participation in health studies.",          
+            },    {
+                src: "https://i.imgur.com/kMnaWD3.jpg",
+                title: "Korean National Institute of Health Collaboration Meeting",
+                description: "Participating in a collaboration meeting with the Korean National Institute of Health to discuss research initiatives and public health strategies. This meeting aimed to foster international partnerships in health research and precision medicine cohort development."          
+            }
+
+        ];
+
+        let currentPhotoIndex = 0;
+
+        // Open the lightbox with a specific photo
+        function openLightbox(index) {
+            currentPhotoIndex = index;
+            updateLightboxContent();
+            document.getElementById('photo-lightbox').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+        }
+
+        // Close the lightbox
+        function closeLightbox() {
+            document.getElementById('photo-lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Change to previous or next photo
+        function changePhoto(direction) {
+            currentPhotoIndex = (currentPhotoIndex + direction + photoData.length) % photoData.length;
+            updateLightboxContent();
+        }
+
+        // Update lightbox content
+        function updateLightboxContent() {
+            const photo = photoData[currentPhotoIndex];
+            document.getElementById('lightbox-image').src = photo.src;
+            document.getElementById('lightbox-title').textContent = photo.title;
+            document.getElementById('lightbox-description').textContent = photo.description;
+        }
+
+        // Close lightbox when clicking outside the image
+        window.onclick = function(event) {
+            const lightbox = document.getElementById('photo-lightbox');
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('photo-lightbox').style.display === 'flex') {
+                if (event.key === 'ArrowLeft') {
+                    changePhoto(-1);
+                } else if (event.key === 'ArrowRight') {
+                    changePhoto(1);
+                } else if (event.key === 'Escape') {
+                    closeLightbox();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
