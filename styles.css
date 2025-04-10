@@ -1675,16 +1675,16 @@
 .episode-image {
     margin-top: 1rem;
     border-radius: 8px;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .episode-image img {
-    width: 75%;
-    max-width: 50 px;
+    width: 100%;
+    max-width: 400px;
     height: auto;
-    display: flex;
-    justify-content: center;
-    margin: 1.5rem 0;
+    object-fit: cover;
 }
 
 .memorable-quote {
