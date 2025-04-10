@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Analytics Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="content-page sub-page dashboard-page">
+    <!-- Header with horizontal navigation -->
+    <header>
+        <div class="header-container">
+            <div class="left-nav">
+                <a href="index.html" class="logo">Larry E. Roberts, Jr.</a>
+                <nav class="horizontal-nav">
+                    <a href="hiring-team.html" class="nav-link">Home</a>
+                    <a href="https://drive.google.com/file/d/1aJv76OsbII8-MXPPP7jj7vjuWs_1nCWY/view?usp=drive_link" class="nav-link">Resume</a>
+                    <a href="aptitudes.html" class="nav-link">Aptitudes</a>
+                    <a href="technical-skills.html" class="nav-link">Technical Skills</a>
+                    <a href="work-samples.html" class="nav-link">Work Samples</a>
+                    <a href="side-projects.html" class="nav-link active">Side Projects</a>
+                    <a href="recommendations.html" class="nav-link">Recommendations</a>
+                    <a href="contact.html" class="nav-link">Contact Me</a>
+                </nav>
+            </div>
+            <div class="right-nav">
+                <a href="profiles.html" class="profile-icon">
+                    <img src="https://i.imgur.com/zaOTwAm.jpg" alt="Hiring Team">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <div class="page-title">
+            <h1>Personal Analytics Dashboard</h1>
+            <p class="dashboard-subtitle">Tracking my life journey through data</p>
+        </div>
+
+        <!-- Category Navigation -->
+        <div class="dashboard-nav">
+            <button class="dashboard-nav-btn active" data-category="all">All</button>
+            <button class="dashboard-nav-btn" data-category="fitness">Fitness</button>
+            <button class="dashboard-nav-btn" data-category="productivity">Productivity</button>
+            <button class="dashboard-nav-btn" data-category="reading">Reading</button>
+            <button class="dashboard-nav-btn" data-category="wellness">Wellness</button>
+            <button class="dashboard-nav-btn" data-category="finance">Finance</button>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- Fitness Card 1 -->
+            <div class="dashboard-card fitness-category">
+                <div class="card-header">
+                    <h3>Weekly Exercise</h3>
+                    <span class="card-subtitle">Last 4 Weeks</span>
+                </div>
+                <div class="card-content">
+                    <canvas id="exerciseChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Fitness Card 2 -->
+            <div class="dashboard-card fitness-category">
+                <div class="card-header">
+                    <h3>Steps Tracker</h3>
+                    <span class="card-subtitle">Daily Progress</span>
+                </div>
+                <div class="card-content steps-content">
+                    <div class="steps-counter">
+                        <div class="steps-progress-ring">
+                            <svg class="steps-svg" viewBox="0 0 100 100">
+                                <circle class="steps-ring-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="steps-ring-progress" cx="50" cy="50" r="45" id="stepsProgress"></circle>
+                            </svg>
+                            <div class="steps-text">
+                                <span id="stepsCount">7,832</span>
+                                <span class="steps-label">steps</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="steps-goal">
+                        <span>Daily Goal: 10,000 steps</span>
+                        <span>78% Complete</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Productivity Card 1 -->
+            <div class="dashboard-card productivity-category">
+                <div class="card-header">
+                    <h3>Deep Work Hours</h3>
+                    <span class="card-subtitle">Monthly Comparison</span>
+                </div>
+                <div class="card-content">
+                    <canvas id="deepWorkChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Productivity Card 2 -->
+            <div class="dashboard-card productivity-category">
+                <div class="card-header">
+                    <h3>Task Completion</h3>
+                    <span class="card-subtitle">This Week</span>
+                </div>
+                <div class="card-content">
+                    <canvas id="taskCompletionChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Reading Card -->
+            <div class="dashboard-card reading-category">
+                <div class="card-header">
+                    <h3>Reading Stats</h3>
+                    <span class="card-subtitle">2025 Progress</span>
+                </div>
+                <div class="card-content reading-content">
+                    <div class="reading-stats">
+                        <div class="reading-stat">
+                            <span class="reading-number">12</span>
+                            <span class="reading-label">Books Read</span>
+                        </div>
+                        <div class="reading-stat">
+                            <span class="reading-number">3,124</span>
+                            <span class="reading-label">Pages</span>
+                        </div>
+                        <div class="reading-stat">
+                            <span class="reading-number">48</span>
+                            <span class="reading-label">Hours</span>
+                        </div>
+                    </div>
+                    <div class="reading-progress">
+                        <div class="reading-goal-text">
+                            <span>Yearly Goal: 36 Books</span>
+                            <span>33% Complete</span>
+                        </div>
+                        <div class="reading-progress-bar">
+                            <div class="progress-bar-fill" style="width: 33%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wellness Card -->
+            <div class="dashboard-card wellness-category">
+                <div class="card-header">
+                    <h3>Sleep Quality</h3>
+                    <span class="card-subtitle">Last 7 Days</span>
+                </div>
+                <div class="card-content">
+                    <canvas id="sleepQualityChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Finance Card -->
+            <div class="dashboard-card finance-category">
+                <div class="card-header">
+                    <h3>Spending Categories</h3>
+                    <span class="card-subtitle">This Month</span>
+                </div>
+                <div class="card-content">
+                    <canvas id="spendingChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Reading Card 2 -->
+            <div class="dashboard-card reading-category">
+                <div class="card-header">
+                    <h3>Current Books</h3>
+                    <span class="card-subtitle">In Progress</span>
+                </div>
+                <div class="card-content netflix-list">
+                    <div class="book-item">
+                        <div class="book-image">
+                            <img src="https://i.imgur.com/nJIDlFO.jpg" alt="Atomic Habits">
+                        </div>
+                        <div class="book-info">
+                            <h4>Atomic Habits</h4>
+                            <p>James Clear</p>
+                            <div class="book-progress">
+                                <div class="book-progress-bar">
+                                    <div class="book-progress-fill" style="width: 65%"></div>
+                                </div>
+                                <span>65%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-image">
+                            <img src="https://i.imgur.com/Ls3P95I.jpg" alt="Deep Work">
+                        </div>
+                        <div class="book-info">
+                            <h4>Deep Work</h4>
+                            <p>Cal Newport</p>
+                            <div class="book-progress">
+                                <div class="book-progress-bar">
+                                    <div class="book-progress-fill" style="width: 40%"></div>
+                                </div>
+                                <span>40%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Productivity Card 3 -->
+            <div class="dashboard-card productivity-category">
+                <div class="card-header">
+                    <h3>Project Distribution</h3>
+                    <span class="card-subtitle">Time Allocation</span>
+                </div>
+                <div class="card-content">
+                    <canvas id="projectDistributionChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Summary Section -->
+        <div class="dashboard-summary">
+            <h2>Insights & Recommendations</h2>
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="summary-icon fitness-icon"></div>
+                    <div class="summary-content">
+                        <h3>Fitness Insight</h3>
+                        <p>Your cardio sessions have increased by 15% this month. Keep up the good work! Consider adding one more strength training session per week.</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon productivity-icon"></div>
+                    <div class="summary-content">
+                        <h3>Productivity Insight</h3>
+                        <p>Your deep work hours peak in the morning between 8-11am. Try to schedule your most important tasks during this high-energy period.</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon reading-icon"></div>
+                    <div class="summary-content">
+                        <h3>Reading Insight</h3>
+                        <p>You're ahead of your reading goal by 2 books! Your reading rate has increased by 20% when you read in the evening versus afternoon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
