@@ -269,121 +269,210 @@
         margin-bottom: 2rem;
     }
 }
-/* Gallery container (hobbies page) - fixing syntax error */
-.gallery-container {
-    display: none;
-    margin-top: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-}
+/* Music Page Styles */
 
-.gallery-container.active {
+/* Album grid layout */
+.album-grid {
     display: grid;
-}
-
-.gallery-container img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 4px;
-    transition: transform 0.3s ease;
-}
-
-.gallery-container.active {
-    display: grid;
-}
-
-.gallery-container img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 4px;
-    transition: transform 0.3s ease;
-}
-
-.gallery-container img:hover {
-    transform: scale(1.1);
-}
-
-.hobby-achievement h3, .hobby-favorites h3, 
-.hobby-playlist h3, .hobby-events h3,
-.hobby-equipment h3, .hobby-signature h3 {
-    color: #E50914;
-    margin-bottom: 0.8rem;
-    font-size: 1.2rem;
-}
-
-.hobby-favorites ul, .hobby-playlist ul {
-    color: #cccccc;
-    padding-left: 1.5rem;
-}
-
-.hobby-favorites li, .hobby-playlist li {
-    margin-bottom: 0.3rem;
-}
-
-.hobby-highlights {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.highlight-item {
-    background: rgba(60, 60, 60, 0.7);
-    padding: 1rem;
-    border-radius: 4px;
-    flex: 1;
-    min-width: 150px;
-}
-
-.highlight-item h3 {
-    color: white;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.hobby-quote {
-    background: rgba(60, 60, 60, 0.7);
-    padding: 1.5rem;
-    border-radius: 8px;
-    font-style: italic;
-    position: relative;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 
-.hobby-quote p {
-    color: #e5e5e5;
-    margin-bottom: 0.5rem;
+.album-card {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    cursor: pointer;
 }
 
-.quote-author {
+.album-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.album-cover {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.album-card:hover .album-cover img {
+    transform: scale(1.05);
+}
+
+.album-info {
+    padding: 1.5rem;
+}
+
+.album-info h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.artist-name {
+    color: #E50914;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.album-year {
     color: #999;
-    text-align: right;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.album-rating {
+    margin-bottom: 1rem;
+}
+
+.star {
+    color: #555;
+    font-size: 1.2rem;
+}
+
+.star.filled {
+    color: #E50914;
+}
+
+.star.half {
+    position: relative;
+    display: inline-block;
+}
+
+.star.half:after {
+    content: '★';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #E50914;
+}
+
+.album-details {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.album-card.expanded .album-details {
     display: block;
 }
 
-.hobby-stats {
+.album-details h4 {
+    color: white;
+    margin: 1rem 0 0.5rem;
+    font-size: 1rem;
+}
+
+.album-details ul {
+    color: #cccccc;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.album-details li {
+    margin-bottom: 0.3rem;
+}
+
+.album-note {
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Music Category Nav */
+.music-categories {
+    margin: 2rem 0;
+}
+
+.category-title {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.category-selection {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.category-btn {
+    background: rgba(60, 60, 60, 0.7);
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    color: #cccccc;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.category-btn:hover {
+    background: rgba(90, 90, 90, 0.8);
+}
+
+.category-btn.active {
+    background: #E50914;
+    color: white;
+}
+
+/* Music Intro */
+.music-intro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: center;
+}
+
+.intro-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.intro-content h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.intro-content p {
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.intro-stats {
+    display: flex;
     gap: 1rem;
     flex-wrap: wrap;
 }
 
 .stat-item {
     background: rgba(60, 60, 60, 0.7);
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 8px;
     text-align: center;
-    flex: 1;
-    min-width: 100px;
+    min-width: 120px;
 }
 
 .stat-value {
     color: #E50914;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: bold;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
 }
 
 .stat-label {
@@ -391,8 +480,291 @@
     font-size: 0.9rem;
 }
 
+/* Album Collection CTA */
+.album-collection-cta {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.view-all-btn {
+    background: rgba(229, 9, 20, 0.8);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.view-all-btn:hover {
+    background: rgba(229, 9, 20, 1);
+}
+
+/* Current Listening */
+.current-listening {
+    margin: 4rem 0;
+}
+
+.current-listening h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.playlist-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background: rgba(30, 30, 30, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.playlist-info {
+    flex: 2;
+    min-width: 300px;
+}
+
+.playlist-info h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.playlist-info > p {
+    color: #cccccc;
+    margin-bottom: 1.5rem;
+}
+
+.playlist-tracks {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+}
+
+.track-item {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.track-number {
+    width: 40px;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.track-details {
+    flex: 1;
+}
+
+.track-details h4 {
+    color: white;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.track-details p {
+    color: #E50914;
+    font-size: 0.9rem;
+    margin: 0.2rem 0 0;
+}
+
+.track-duration {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.playlist-visual {
+    flex: 1;
+    min-width: 250px;
+}
+
+.cover-art-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.cover-art-grid img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.cover-art-grid img:hover {
+    transform: scale(1.05);
+}
+
+.playlist-qr {
+    text-align: center;
+}
+
+.playlist-qr img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 0.5rem;
+}
+
+.playlist-qr p {
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+/* Live Music Experiences */
+.live-music {
+    margin: 4rem 0;
+}
+
+.live-music h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.concerts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.concert-card {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.concert-card:hover {
+    transform: translateY(-5px);
+}
+
+.concert-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.concert-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.concert-card:hover .concert-image img {
+    transform: scale(1.05);
+}
+
+.concert-info {
+    padding: 1.5rem;
+}
+
+.concert-info h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.concert-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.venue, .date {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.venue:before {
+    content: '📍';
+    margin-right: 0.3rem;
+}
+
+.date:before {
+    content: '📅';
+    margin-right: 0.3rem;
+}
+
+.concert-note {
+    color: #cccccc;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Music Equipment */
+.music-equipment {
+    margin: 4rem 0;
+}
+
+.music-equipment h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.equipment-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background: rgba(30, 30, 30, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.equipment-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.equipment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.equipment-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.equipment-details h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.equipment-details p {
+    color: #cccccc;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.equipment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.equipment-list li {
+    color: #cccccc;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.equipment-type {
+    color: #E50914;
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+
+/* Personal quote section - modified from original */
 .personal-quote {
-    margin: 3rem 0;
+    margin: 4rem 0;
     text-align: center;
 }
 
@@ -418,6 +790,39 @@
     color: white;
     line-height: 1.6;
     position: relative;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .album-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    
+    .concerts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .intro-stats {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .track-details h4 {
+        font-size: 0.9rem;
+    }
+    
+    .equipment-details, .equipment-image {
+        min-width: 100%;
+    }
+    
+    .playlist-info, .playlist-visual {
+        min-width: 100%;
+    }
+    
+    .cover-art-grid {
+        max-width: 300px;
+        margin: 0 auto 1.5rem;
+    }
 }
 
 /* Travel Experiences Page */
