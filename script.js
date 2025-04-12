@@ -613,3 +613,16 @@ window.addEventListener('load', function() {
     });
 });
 
+// Find the "View Tutorials" button using its class or ID
+const viewTutorialsBtn = document.querySelector('.view-tutorials-btn'); // Replace with actual class/ID
+
+// Add a click event listener to the button
+if (viewTutorialsBtn) {
+    viewTutorialsBtn.addEventListener('click', function(event) {
+        // Prevent the default action (following the link)
+        event.preventDefault();
+        
+        // Show the alert message
+        alert('Tutorials coming soon!');
+    });
+}
