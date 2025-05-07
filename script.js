@@ -626,3 +626,712 @@ if (viewTutorialsBtn) {
         alert('Tutorials coming soon!');
     });
 }
+
+// Rx Roundup JavaScript
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize animations
+    initAnimations();
+    
+    // Setup hover effects
+    setupHoverEffects();
+    
+    // Initialize subscription form
+    initSubscriptionForm();
+});
+
+// Initialize staggered animations for cards
+function initAnimations() {
+    // Staggered animation for news items
+    const newsItems = document.querySelectorAll('.news-item');
+    newsItems.forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.1}s`;
+    });
+    
+    // Staggered animation for issue cards
+    const issueCards = document.querySelectorAll('.issue-card');
+    issueCards.forEach((card, index) => {
+        card.style.animationDelay = `${0.3 + (index * 0.1)}s`;
+    });
+    
+    // Staggered animation for trend cards
+    const trendCards = document.querySelectorAll('.trend-card');
+    trendCards.forEach((card, index) => {
+        card.style.animationDelay = `${0.6 + (index * 0.1)}s`;
+    });
+    
+    // Subtle animation for featured story
+    const featuredStory = document.querySelector('.featured-story');
+    if (featuredStory) {
+        featuredStory.style.opacity = '0';
+        featuredStory.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            featuredStory.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            featuredStory.style.opacity = '1';
+            featuredStory.style.transform = 'translateY(0)';
+        }, 100);
+    }
+}
+
+// Setup Netflix-like hover effects
+function setupHoverEffects() {
+    // Add hover effect sound for clickable elements (commented out, uncomment if you want to add sounds)
+    const clickableElements = document.querySelectorAll('.news-item, .issue-card, .trend-card, .read-more, .view-issue, .trend-link, .netflix-btn');
+    
+    clickableElements.forEach(element => {
+        element.addEventListener('mouseenter', function() {
+            // Uncomment to add hover sound effect
+            // playHoverSound();
+        });
+    });
+    
+    // Add subtle scale effect to banner on hover
+    const banner = document.querySelector('.pharma-banner');
+    if (banner) {
+        banner.addEventListener('mouseenter', function() {
+            this.style.transition = 'transform 10s ease';
+            this.style.transform = 'scale(1.05)';
+        });
+        
+        banner.addEventListener('mouseleave', function() {
+            this.style.transition = 'transform 1s ease';
+            this.style.transform = 'scale(1)';
+        });
+    }
+}
+
+// Initialize subscription form
+function initSubscriptionForm() {
+    const subscribeForm = document.querySelector('.subscribe-form');
+    
+    if (subscribeForm) {
+        subscribeForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const emailInput = this.querySelector('input[type="email"]');
+            const email = emailInput.value;
+            
+            if (validateEmail(email)) {
+                // For demonstration, just show an alert (in a real implementation, you would connect to a subscription service)
+                showSubscriptionMessage('Thank you for subscribing to Pharma Weekly!');
+                emailInput.value = '';
+            } else {
+                showSubscriptionMessage('Please enter a valid email address.', true);
+            }
+        });
+    }
+}
+
+// Validate email format
+function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+// Show subscription message
+function showSubscriptionMessage(message, isError = false) {
+    // Check if a message already exists and remove it
+    const existingMessage = document.querySelector('.subscription-message');
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    // Create message element
+    const messageElement = document.createElement('div');
+    messageElement.className = 'subscription-message';
+    messageElement.textContent = message;
+    messageElement.style.padding = '10px';
+    messageElement.style.marginTop = '10px';
+    messageElement.style.borderRadius = '4px';
+    messageElement.style.textAlign = 'center';
+    
+    if (isError) {
+        messageElement.style.backgroundColor = 'rgba(244, 67, 54, 0.1)';
+        messageElement.style.color = '#F44336';
+    } else {
+        messageElement.style.backgroundColor = 'rgba(76, 175, 80, 0.1)';
+        messageElement.style.color = '#4CAF50';
+    }
+    
+    // Add message to the form
+    const subscribeForm = document.querySelector('.subscribe-form');
+    subscribeForm.parentNode.insertBefore(messageElement, subscribeForm.nextSibling);
+    
+    // Remove the message after 3 seconds
+    setTimeout(() => {
+        messageElement.style.opacity = '0';
+        messageElement.style.transition = 'opacity 0.5s ease';
+        
+        setTimeout(() => {
+            messageElement.remove();
+        }, 500);
+    }, 3000);
+}
+
+// Function to play hover sound (commented out by default)
+function playHoverSound() {
+    // Uncomment to implement sound
+    // const hoverSound = new Audio('hover-sound.mp3');
+    // hoverSound.volume = 0.2;
+    // hoverSound.play();
+}
+
+// Add Netflix-like scroll behavior for previous issues
+function initializeScrollBehavior() {
+    const issuesSlider = document.querySelector('.issues-slider');
+    
+    if (issuesSlider && window.innerWidth > 768) {
+        // Add scroll indicators if needed
+        const scrollLeftIndicator = document.createElement('div');
+        scrollLeftIndicator.className = 'scroll-indicator scroll-left';
+        scrollLeftIndicator.innerHTML = '&lt;';
+        
+        const scrollRightIndicator = document.createElement('div');
+        scrollRightIndicator.className = 'scroll-indicator scroll-right';
+        scrollRightIndicator.innerHTML = '&gt;';
+        
+        const previousIssuesSection = document.querySelector('.previous-issues');
+        previousIssuesSection.style.position = 'relative';
+        previousIssuesSection.appendChild(scrollLeftIndicator);
+        previousIssuesSection.appendChild(scrollRightIndicator);
+        
+        // Initialize scroll position
+        let scrollPosition = 0;
+        const cardWidth = 320; // Approximate width of a card + gap
+        
+        // Scroll left
+        scrollLeftIndicator.addEventListener('click', function() {
+            scrollPosition = Math.max(scrollPosition - cardWidth, 0);
+            issuesSlider.scrollTo({
+                left: scrollPosition,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Scroll right
+        scrollRightIndicator.addEventListener('click', function() {
+            scrollPosition = Math.min(scrollPosition + cardWidth, issuesSlider.scrollWidth - issuesSlider.clientWidth);
+            issuesSlider.scrollTo({
+                left: scrollPosition,
+                behavior: 'smooth'
+            });
+        });
+    }
+}
+
+// Call additional initialization function
+window.addEventListener('load', function() {
+    initializeScrollBehavior();
+});
+
+// MOA Mondays JavaScript
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the modal functionality
+    initModal();
+    
+    // Add staggered animations for cards
+    initAnimations();
+    
+    // Initialize flip card accessibility
+    initCardAccessibility();
+});
+
+// Initialize modal functionality
+function initModal() {
+    // Get modal elements
+    const modal = document.getElementById('moaModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.close-modal');
+    const expandBtns = document.querySelectorAll('.expand-btn');
+    
+    // Add click event to all expand buttons
+    expandBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Get the image source from data attribute
+            const imgSrc = this.getAttribute('data-image');
+            // Set the modal image source
+            modalImg.src = imgSrc;
+            // Display the modal
+            modal.style.display = 'block';
+            // Prevent body scrolling
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    // Close modal when clicking the close button
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        // Restore body scrolling
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            // Restore body scrolling
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Close modal with escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            // Restore body scrolling
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
+// Initialize staggered animations
+function initAnimations() {
+    // Get all MOA cards
+    const moaCards = document.querySelectorAll('.moa-card');
+    
+    // Apply staggered animation delay
+    moaCards.forEach((card, index) => {
+        card.style.animationDelay = `${0.1 + (index * 0.1)}s`;
+    });
+    
+    // Get all mention cards
+    const mentionCards = document.querySelectorAll('.mention-card');
+    
+    // Apply staggered animation delay
+    mentionCards.forEach((card, index) => {
+        card.style.animationDelay = `${0.7 + (index * 0.1)}s`;
+    });
+    
+    // Animate intro elements
+    const introContent = document.querySelector('.intro-content');
+    const introImage = document.querySelector('.intro-image');
+    
+    if (introContent && introImage) {
+        introContent.style.opacity = '0';
+        introContent.style.transform = 'translateX(-20px)';
+        introImage.style.opacity = '0';
+        introImage.style.transform = 'translateX(20px)';
+        
+        setTimeout(() => {
+            introContent.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            introContent.style.opacity = '1';
+            introContent.style.transform = 'translateX(0)';
+        }, 300);
+        
+        setTimeout(() => {
+            introImage.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            introImage.style.opacity = '1';
+            introImage.style.transform = 'translateX(0)';
+        }, 500);
+    }
+}
+
+// Initialize card accessibility for keyboard users
+function initCardAccessibility() {
+    // Get all MOA cards
+    const moaCards = document.querySelectorAll('.moa-card');
+    
+    // Make cards focusable
+    moaCards.forEach(card => {
+        card.setAttribute('tabindex', '0');
+        
+        // Flip card on focus
+        card.addEventListener('focus', function() {
+            this.querySelector('.moa-card-inner').style.transform = 'rotateY(180deg)';
+        });
+        
+        // Flip back on blur
+        card.addEventListener('blur', function() {
+            this.querySelector('.moa-card-inner').style.transform = 'rotateY(0deg)';
+        });
+        
+        // Add keyboard support for card expand button
+        const expandBtn = card.querySelector('.expand-btn');
+        if (expandBtn) {
+            expandBtn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        }
+    });
+}
+
+// Presentations JavaScript
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize presentation viewer
+    initPresentationViewer();
+    
+    // Initialize modal functionality
+    initModal();
+    
+    // Add animations for elements
+    initAnimations();
+    
+    // Initialize download buttons
+    initDownloadButtons();
+});
+
+// Initialize presentation viewer functionality
+function initPresentationViewer() {
+    // Get elements
+    const presentationItems = document.querySelectorAll('.presentation-item');
+    const presentationSlides = document.querySelectorAll('.presentation-slides');
+    const prevBtn = document.querySelector('.prev-slide');
+    const nextBtn = document.querySelector('.next-slide');
+    const currentSlideEl = document.getElementById('currentSlide');
+    const totalSlidesEl = document.getElementById('totalSlides');
+    const fullscreenBtn = document.querySelector('.fullscreen-btn');
+    
+    let currentPresentationId = 'presentation1'; // Default presentation
+    let currentSlideIndex = 0;
+    
+    // Function to update slides counter
+    function updateSlidesCounter() {
+        const activePresentation = document.getElementById(currentPresentationId);
+        const allSlides = activePresentation.querySelectorAll('.slide');
+        
+        currentSlideEl.textContent = currentSlideIndex + 1;
+        totalSlidesEl.textContent = allSlides.length;
+        
+        // Disable/enable navigation buttons
+        if (currentSlideIndex === 0) {
+            prevBtn.disabled = true;
+        } else {
+            prevBtn.disabled = false;
+        }
+        
+        if (currentSlideIndex === allSlides.length - 1) {
+            nextBtn.disabled = true;
+        } else {
+            nextBtn.disabled = false;
+        }
+    }
+    
+    // Function to show specific slide
+    function showSlide(slideIndex) {
+        const activePresentation = document.getElementById(currentPresentationId);
+        const allSlides = activePresentation.querySelectorAll('.slide');
+        
+        // Hide all slides
+        allSlides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+        
+        // Show selected slide
+        allSlides[slideIndex].classList.add('active');
+        
+        // Update counter
+        currentSlideIndex = slideIndex;
+        updateSlidesCounter();
+    }
+    
+    // Function to switch presentations
+    function switchPresentation(presentationId) {
+        // Hide all presentations
+        presentationSlides.forEach(presentation => {
+            presentation.classList.add('hidden');
+        });
+        
+        // Show selected presentation
+        const selectedPresentation = document.getElementById(presentationId);
+        selectedPresentation.classList.remove('hidden');
+        
+        // Reset to first slide
+        currentPresentationId = presentationId;
+        currentSlideIndex = 0;
+        showSlide(currentSlideIndex);
+    }
+    
+    // Add click event to presentation items
+    presentationItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Remove active class from all items
+            presentationItems.forEach(i => i.classList.remove('active'));
+            
+            // Add active class to clicked item
+            this.classList.add('active');
+            
+            // Get presentation ID
+            const presentationId = this.getAttribute('data-id');
+            
+            // Switch to selected presentation
+            switchPresentation(presentationId);
+        });
+    });
+    
+    // Previous slide button
+    prevBtn.addEventListener('click', function() {
+        if (currentSlideIndex > 0) {
+            showSlide(currentSlideIndex - 1);
+        }
+    });
+    
+    // Next slide button
+    nextBtn.addEventListener('click', function() {
+        const activePresentation = document.getElementById(currentPresentationId);
+        const allSlides = activePresentation.querySelectorAll('.slide');
+        
+        if (currentSlideIndex < allSlides.length - 1) {
+            showSlide(currentSlideIndex + 1);
+        }
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        // Only if we're not inside a form input
+        if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            if (e.key === 'ArrowLeft') {
+                // Left arrow - previous slide
+                if (currentSlideIndex > 0) {
+                    showSlide(currentSlideIndex - 1);
+                }
+            } else if (e.key === 'ArrowRight') {
+                // Right arrow - next slide
+                const activePresentation = document.getElementById(currentPresentationId);
+                const allSlides = activePresentation.querySelectorAll('.slide');
+                
+                if (currentSlideIndex < allSlides.length - 1) {
+                    showSlide(currentSlideIndex + 1);
+                }
+            }
+        }
+    });
+    
+    // Fullscreen button
+    fullscreenBtn.addEventListener('click', function() {
+        const activePresentation = document.getElementById(currentPresentationId);
+        const activeSlide = activePresentation.querySelector('.slide.active img');
+        const modalImg = document.getElementById('modalImage');
+        const modal = document.getElementById('presentationModal');
+        const modalCurrentSlide = document.getElementById('modalCurrentSlide');
+        const modalTotalSlides = document.getElementById('modalTotalSlides');
+        
+        // Set modal image source to current slide
+        modalImg.src = activeSlide.src;
+        
+        // Update modal slide counter
+        modalCurrentSlide.textContent = currentSlideIndex + 1;
+        modalTotalSlides.textContent = activePresentation.querySelectorAll('.slide').length;
+        
+        // Show modal
+        modal.style.display = 'block';
+        
+        // Prevent body scrolling
+        document.body.style.overflow = 'hidden';
+    });
+    
+    // Initialize with default presentation
+    updateSlidesCounter();
+}
+
+// Initialize modal functionality
+function initModal() {
+    // Get modal elements
+    const modal = document.getElementById('presentationModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.close-modal');
+    const prevModalBtn = document.querySelector('.prev-modal');
+    const nextModalBtn = document.querySelector('.next-modal');
+    const modalCurrentSlide = document.getElementById('modalCurrentSlide');
+    const modalTotalSlides = document.getElementById('modalTotalSlides');
+    
+    let currentModalSlideIndex = 0;
+    let currentModalPresentationId = 'presentation1';
+    
+    // Function to update modal slide
+    function updateModalSlide() {
+        const activePresentation = document.getElementById(currentModalPresentationId);
+        const allSlides = activePresentation.querySelectorAll('.slide img');
+        
+        // Set modal image to current slide
+        modalImg.src = allSlides[currentModalSlideIndex].src;
+        
+        // Update counter
+        modalCurrentSlide.textContent = currentModalSlideIndex + 1;
+    }
+    
+    // Previous modal slide button
+    prevModalBtn.addEventListener('click', function() {
+        const activePresentation = document.getElementById(currentModalPresentationId);
+        const allSlides = activePresentation.querySelectorAll('.slide');
+        
+        if (currentModalSlideIndex > 0) {
+            currentModalSlideIndex--;
+            updateModalSlide();
+        }
+    });
+    
+    // Next modal slide button
+    nextModalBtn.addEventListener('click', function() {
+        const activePresentation = document.getElementById(currentModalPresentationId);
+        const allSlides = activePresentation.querySelectorAll('.slide');
+        
+        if (currentModalSlideIndex < allSlides.length - 1) {
+            currentModalSlideIndex++;
+            updateModalSlide();
+        }
+    });
+    
+    // Close modal when clicking the close button
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        // Restore body scrolling
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            // Restore body scrolling
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Close modal with escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            // Restore body scrolling
+            document.body.style.overflow = 'auto';
+        } else if (modal.style.display === 'block') {
+            // Left/Right arrows for navigation in fullscreen mode
+            if (e.key === 'ArrowLeft') {
+                const activePresentation = document.getElementById(currentModalPresentationId);
+                const allSlides = activePresentation.querySelectorAll('.slide');
+                
+                if (currentModalSlideIndex > 0) {
+                    currentModalSlideIndex--;
+                    updateModalSlide();
+                }
+            } else if (e.key === 'ArrowRight') {
+                const activePresentation = document.getElementById(currentModalPresentationId);
+                const allSlides = activePresentation.querySelectorAll('.slide');
+                
+                if (currentModalSlideIndex < allSlides.length - 1) {
+                    currentModalSlideIndex++;
+                    updateModalSlide();
+                }
+            }
+        }
+    });
+    
+    // Update current presentation when opening modal
+    document.querySelector('.fullscreen-btn').addEventListener('click', function() {
+        // Get current active presentation ID
+        const activePresItem = document.querySelector('.presentation-item.active');
+        currentModalPresentationId = activePresItem.getAttribute('data-id');
+        
+        // Get current slide index from main viewer
+        currentModalSlideIndex = parseInt(document.getElementById('currentSlide').textContent) - 1;
+    });
+}
+
+// Initialize animations
+function initAnimations() {
+    // Get elements to animate
+    const presentationSelector = document.querySelector('.presentation-selector');
+    const presentationDisplay = document.querySelector('.presentation-display');
+    const downloadCards = document.querySelectorAll('.download-card');
+    const approachContent = document.querySelector('.approach-content');
+    
+    // Apply initial styles for animation
+    if (presentationSelector) {
+        presentationSelector.style.opacity = '0';
+        presentationSelector.style.transform = 'translateY(20px)';
+    }
+    
+    if (presentationDisplay) {
+        presentationDisplay.style.opacity = '0';
+        presentationDisplay.style.transform = 'translateY(20px)';
+    }
+    
+    downloadCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+    });
+    
+    if (approachContent) {
+        approachContent.style.opacity = '0';
+        approachContent.style.transform = 'translateY(20px)';
+    }
+    
+    // Animate elements with staggered timing
+    setTimeout(() => {
+        if (presentationSelector) {
+            presentationSelector.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            presentationSelector.style.opacity = '1';
+            presentationSelector.style.transform = 'translateY(0)';
+        }
+    }, 100);
+    
+    setTimeout(() => {
+        if (presentationDisplay) {
+            presentationDisplay.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            presentationDisplay.style.opacity = '1';
+            presentationDisplay.style.transform = 'translateY(0)';
+        }
+    }, 300);
+    
+    downloadCards.forEach((card, index) => {
+        setTimeout(() => {
+            card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, 500 + (index * 100));
+    });
+    
+    setTimeout(() => {
+        if (approachContent) {
+            approachContent.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            approachContent.style.opacity = '1';
+            approachContent.style.transform = 'translateY(0)';
+        }
+    }, 900);
+    
+    // Add Netflix-like hover effects to download buttons
+    const downloadBtns = document.querySelectorAll('.download-btn');
+    
+    downloadBtns.forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+        });
+        
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });
+}
+
+// Initialize download buttons
+function initDownloadButtons() {
+    const downloadBtns = document.querySelectorAll('.download-btn');
+    
+    downloadBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            // For demo purposes, we're preventing the default action
+            // In a real implementation, this would download the PDF
+            e.preventDefault();
+            
+            // Show feedback
+            const originalText = this.textContent;
+            this.textContent = 'Downloading...';
+            
+            // Simulate download delay
+            setTimeout(() => {
+                this.textContent = 'Downloaded!';
+                
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    this.textContent = originalText;
+                }, 2000);
+            }, 1500);
+        });
+    });
+}
