@@ -5342,6 +5342,74 @@ header {
     }
 }
 
+/* Add these CSS rules to your moa-mondays.css file */
+
+/* Add a max-height and scroll to the details section if content gets too long */
+.moa-details {
+    margin: 20px 0;
+    flex: 1;
+    overflow-y: auto;
+    max-height: 280px; /* Adjust this value as needed */
+    padding-right: 5px;
+}
+
+/* Ensure the button is always visible at the bottom of the card */
+.expand-btn {
+    background-color: #E50914;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-self: center;
+    margin-top: auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* Improve list styling in the key targets section */
+.key-targets ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.key-targets .target-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.key-targets .target-list li {
+    color: #e5e5e5;
+    padding: 3px 0;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.key-targets p {
+    margin: 10px 0 2px 0;
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+/* Add a subtle shadow to help the button stand out */
+.expand-btn {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Make sure there's proper spacing between the content and button */
+.moa-card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    height: 100%;
+}
+
 /* Presentations Page Styles */
 
 /* Main Container */
