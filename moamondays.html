@@ -5,6 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOA Mondays | Larry E. Roberts, Jr.</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles for the external button solution */
+        .moa-card-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+
+        .external-button-container {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .external-button-container .expand-btn {
+            background-color: #E50914;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .external-button-container .expand-btn:hover {
+            background-color: #f40612;
+            transform: scale(1.05);
+            color: white;
+        }
+    </style>
 </head>
 <body class="content-page sub-page moa-page">
     <!-- Header with horizontal navigation -->
@@ -74,39 +106,44 @@
             <h2>Featured MOA Infographics</h2>
             
             <div class="gallery-grid">
-               <!-- MOA Card 1 (Fixed) -->
-              <!-- Replace your current GLP-1 card with this version -->
-              <div class="moa-card">
-                 <div class="moa-card-inner">
-                     <div class="moa-card-front">
-                         <img src="https://i.imgur.com/E4dkEWD.jpg" alt="GLP-1 MOA for Weight Loss">
-                        <div class="moa-overlay">
-                            <h3>GLP-1: Glucogon-like Peptide-1</h3>
-                            <span class="drug-class">Anti-diabetic & Weight Management</span>
-                        </div>
-                    </div>
-                    <div class="moa-card-back">
-                        <h3>GLP-1</h3>
-                        <p class="drug-class">Anti-diabetic & Weight Management</p>
-                        <div class="moa-details">
-                            <p>GLP-1 drugs like Ozempic and Wegovy mimic the hormone Glucagon-like Peptide-1 to reduce appetite and increase fullness.</p>
-                            <div class="key-targets">
-                                <span>Key Targets:</span>
-                                <p>GLP-1 receptors in:</p>
-                                <ul class="target-list">
-                                    <li>Brain</li>
-                                    <li>Heart</li>
-                                    <li>Pancreas</li>
-                                    <li>Liver</li>
-                                    <li>Gastrointestinal Tract</li> 
-                                </ul>
+                <!-- MOA Card with External Button -->
+                <div class="moa-card-container">
+                    <!-- The card itself -->
+                    <div class="moa-card">
+                        <div class="moa-card-inner">
+                            <div class="moa-card-front">
+                                <img src="https://i.imgur.com/E4dkEWD.jpg" alt="GLP-1 MOA for Weight Loss">
+                                <div class="moa-overlay">
+                                    <h3>GLP-1: Glucogon-like Peptide-1</h3>
+                                    <span class="drug-class">Anti-diabetic & Weight Management</span>
+                                </div>
+                            </div>
+                            <div class="moa-card-back">
+                                <h3>GLP-1</h3>
+                                <p class="drug-class">Anti-diabetic & Weight Management</p>
+                                <div class="moa-details">
+                                    <p>GLP-1 drugs like Ozempic and Wegovy mimic the hormone Glucagon-like Peptide-1 to reduce appetite and increase fullness.</p>
+                                    <div class="key-targets">
+                                        <span>Key Targets:</span>
+                                        <p>GLP-1 receptors in:</p>
+                                        <ul class="target-list">
+                                            <li>Brain</li>
+                                            <li>Heart</li>
+                                            <li>Pancreas</li>
+                                            <li>Liver</li>
+                                            <li>Gastrointestinal Tract</li> 
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="button-container">
+                    </div>
+                    
+                    <!-- External button, outside the card's flip effect -->
+                    <div class="external-button-container">
                         <a href="https://i.imgur.com/9KHjLFI.png" target="_blank" class="expand-btn">View Full Infographic</a>
                     </div>
                 </div>
-            </div>
 
                 <!-- MOA Card 2 
                 <div class="moa-card">
