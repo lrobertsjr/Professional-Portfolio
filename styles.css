@@ -4985,6 +4985,7 @@ header {
     right: 0;
     background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
     padding: 20px;
+    z-index: 2;
 }
 
 .moa-overlay h3 {
@@ -5004,6 +5005,8 @@ header {
     padding: 25px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .moa-card-back h3 {
@@ -5015,6 +5018,9 @@ header {
 .moa-details {
     margin: 20px 0;
     flex: 1;
+    overflow-y: auto;
+    max-height: 280px;
+    padding-right: 5px;
 }
 
 .moa-details p {
@@ -5040,7 +5046,7 @@ header {
 .key-targets ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 
 .key-targets li {
@@ -5049,6 +5055,27 @@ header {
     font-size: 0.9rem;
 }
 
+.key-targets .target-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.key-targets .target-list li {
+    color: #e5e5e5;
+    padding: 3px 0;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.key-targets p {
+    margin: 10px 0 2px 0;
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+/* Button/Link Styling (modified for direct link) */
 .expand-btn {
     background-color: #E50914;
     color: white;
@@ -5059,55 +5086,21 @@ header {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     align-self: center;
-    margin-top: auto;
+    margin-top: 10px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    /* Added for link styling */
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
 }
 
 .expand-btn:hover {
     background-color: #f40612;
     transform: scale(1.05);
-}
-
-/* Modal Styling */
-.moa-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-.modal-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    max-width: 90%;
-    margin: auto;
-}
-
-.modal-content img {
-    max-width: 100%;
-    max-height: 90vh;
-    object-fit: contain;
-}
-
-.close-modal {
-    position: absolute;
-    top: 20px;
-    right: 30px;
     color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1001;
-    transition: color 0.3s ease;
-}
-
-.close-modal:hover {
-    color: #E50914;
+    text-decoration: none;
 }
 
 /* Media Mentions Section */
@@ -5265,10 +5258,6 @@ header {
     pointer-events: none;
 }
 
-.moa-overlay {
-    z-index: 2;
-}
-
 /* Netflix-like hover indicator */
 .moa-card::after {
     content: 'Flip for details';
@@ -5340,176 +5329,6 @@ header {
     .expand-btn {
         display: none;
     }
-}
-
-/* Add these CSS rules to your moa-mondays.css file */
-
-/* Add a max-height and scroll to the details section if content gets too long */
-.moa-details {
-    margin: 20px 0;
-    flex: 1;
-    overflow-y: auto;
-    max-height: 280px; /* Adjust this value as needed */
-    padding-right: 5px;
-}
-
-/* Ensure the button is always visible at the bottom of the card */
-.expand-btn {
-    background-color: #E50914;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    align-self: center;
-    margin-top: auto;
-    position: relative;
-    z-index: 10;
-}
-
-/* Improve list styling in the key targets section */
-.key-targets ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 0 10px 0;
-}
-
-.key-targets .target-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 5px;
-    margin-top: 8px;
-}
-
-.key-targets .target-list li {
-    color: #e5e5e5;
-    padding: 3px 0;
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-.key-targets p {
-    margin: 10px 0 2px 0;
-    color: #cccccc;
-    font-size: 0.9rem;
-}
-
-/* Add a subtle shadow to help the button stand out */
-.expand-btn {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* Make sure there's proper spacing between the content and button */
-.moa-card-back {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 25px;
-    height: 100%;
-}
-
-/* MOA Card Styles - Add to your styles.css file */
-
-/* Card details section needs fixed height and scrolling */
-.moa-details {
-    margin: 20px 0;
-    flex: 1;
-    overflow-y: auto;
-    max-height: 280px; /* Adjust this value as needed */
-    padding-right: 5px;
-}
-
-/* Ensure the button is always visible and clickable */
-.expand-btn {
-    background-color: #E50914;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    align-self: center;
-    margin-top: 10px; /* Space between content and button */
-    position: relative;
-    z-index: 10;
-}
-
-.expand-btn:hover {
-    background-color: #f40612;
-    transform: scale(1.05);
-}
-
-/* Improved list styling */
-.key-targets ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 0 10px 0;
-}
-
-.key-targets .target-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 5px;
-    margin-top: 8px;
-}
-
-.key-targets .target-list li {
-    color: #e5e5e5;
-    padding: 3px 0;
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-.key-targets p {
-    margin: 10px 0 2px 0;
-    color: #cccccc;
-    font-size: 0.9rem;
-}
-
-/* Modal styling if not already in your CSS */
-.moa-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-.modal-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    max-width: 90%;
-    margin: auto;
-}
-
-.modal-content img {
-    max-width: 100%;
-    max-height: 90vh;
-    object-fit: contain;
-}
-
-.close-modal {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1001;
-    transition: color 0.3s ease;
-}
-
-.close-modal:hover {
-    color: #E50914;
 }
 
 /* Presentations Page Styles */

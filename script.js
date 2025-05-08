@@ -828,64 +828,12 @@ window.addEventListener('load', function() {
 // MOA Mondays JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize the modal functionality
-    initModal();
-    
     // Add staggered animations for cards
     initAnimations();
     
     // Initialize flip card accessibility
     initCardAccessibility();
 });
-
-// Initialize modal functionality
-function initModal() {
-    // Get modal elements
-    const modal = document.getElementById('moaModal');
-    const modalImg = document.getElementById('modalImage');
-    const closeBtn = document.querySelector('.close-modal');
-    const expandBtns = document.querySelectorAll('.expand-btn');
-    
-    // Add click event to all expand buttons
-    expandBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Get the image source from data attribute
-            const imgSrc = this.getAttribute('data-image');
-            // Set the modal image source
-            modalImg.src = imgSrc;
-            // Display the modal
-            modal.style.display = 'block';
-            // Prevent body scrolling
-            document.body.style.overflow = 'hidden';
-        });
-    });
-    
-    // Close modal when clicking the close button
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-        // Restore body scrolling
-        document.body.style.overflow = 'auto';
-    });
-    
-    // Close modal when clicking outside the image
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-            // Restore body scrolling
-            document.body.style.overflow = 'auto';
-        }
-    });
-    
-    // Close modal with escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
-            modal.style.display = 'none';
-            // Restore body scrolling
-            document.body.style.overflow = 'auto';
-        }
-    });
-}
 
 // Initialize staggered animations
 function initAnimations() {
@@ -948,15 +896,12 @@ function initCardAccessibility() {
             this.querySelector('.moa-card-inner').style.transform = 'rotateY(0deg)';
         });
         
-        // Add keyboard support for card expand button
-        const expandBtn = card.querySelector('.expand-btn');
-        if (expandBtn) {
-            expandBtn.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    this.click();
-                }
-            });
+        // Ensure links are accessible
+        const expandLink = card.querySelector('.expand-btn');
+        if (expandLink) {
+            // Make sure the link works with keyboard navigation
+            expandLink.setAttribute('role', 'button');
+            expandLink.setAttribute('aria-label', 'View full infographic in new tab');
         }
     });
 }
