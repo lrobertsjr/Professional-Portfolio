@@ -5331,6 +5331,49 @@ header {
     }
 }
 
+/* Container to ensure link is clickable */
+.button-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    z-index: 20; /* Higher z-index to ensure clickability */
+}
+
+/* Updated button/link style */
+.expand-btn {
+    background-color: #E50914;
+    color: white !important; /* Force white text */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none !important; /* Force no underline */
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.expand-btn:hover {
+    background-color: #f40612;
+    transform: scale(1.05);
+    color: white !important;
+}
+
+.expand-btn:active {
+    transform: scale(0.98);
+}
+
+/* Adjust details section to prevent overflow */
+.moa-details {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 250px; /* Reduced to make more room for button */
+}
+
 /* Presentations Page Styles */
 
 /* Main Container */
