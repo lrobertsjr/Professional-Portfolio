@@ -3314,6 +3314,90 @@ header {
     }
 }
 
+/* Add this to your styles.css file */
+
+/* Special highlight for Work Samples and In the Field cards */
+.highlight-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Soft pulsing border */
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid #E50914;
+    border-radius: 6px;
+    animation: pulseBorder 3s infinite;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Subtle glow effect */
+.highlight-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(229, 9, 20, 0.2) 0%, transparent 70%);
+    opacity: 0;
+    animation: glowEffect 3s infinite alternate;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Special styling for highlighted card titles */
+.highlight-card .card-info h3 {
+    color: #ff7b7b; /* Lighter red shade */
+    font-weight: 600; /* Make it slightly bolder */
+    position: relative;
+    /* Add a very subtle text shadow for depth */
+    text-shadow: 0 0 8px rgba(229, 9, 20, 0.3);
+    transition: color 0.3s ease;
+}
+
+/* Enhanced hover effect */
+.highlight-card:hover .card-info h3 {
+    color: #ffffff; /* Change to white on hover */
+}
+
+.highlight-card:hover::after {
+    opacity: 0.8; /* Increase glow on hover */
+    background: radial-gradient(circle at center, rgba(229, 9, 20, 0.3) 0%, transparent 70%);
+}
+
+/* Animation for the border */
+@keyframes pulseBorder {
+    0% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.4; }
+}
+
+/* Animation for the glow effect */
+@keyframes glowEffect {
+    0% { opacity: 0.1; }
+    100% { opacity: 0.4; }
+}
+
+/* Create a subtle shake animation that activates occasionally */
+.auto-shake {
+    animation: occasionalShake 15s ease-in-out infinite;
+}
+
+@keyframes occasionalShake {
+    0%, 90%, 100% { transform: translateX(0); }
+    92% { transform: translateX(-3px) rotate(-0.5deg); }
+    94% { transform: translateX(3px) rotate(0.5deg); }
+    96% { transform: translateX(-2px) rotate(-0.3deg); }
+    98% { transform: translateX(2px) rotate(0.3deg); }
+}
+
 /* Gaming page styles */
 .gaming-page .page-banner {
     background-image: url('https://i.imgur.com/G1rtDr7.gif');
