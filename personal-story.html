@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="content-page sub-page">
+    <!-- Header with horizontal navigation -->
+    <header>
+        <div class="header-container">
+            <div class="left-nav">
+                <a href="index.html" class="logo">Larry E. Roberts, Jr.</a>
+                <nav class="horizontal-nav">
+                    <a href="hiring-team.html" class="nav-link">Home</a>
+                    <a href="https://drive.google.com/file/d/1aJv76OsbII8-MXPPP7jj7vjuWs_1nCWY/view?usp=drive_link" class="nav-link">Resume</a>
+                    <a href="work-history.html" class="nav-link active">Work History</a>
+                    <a href="aptitudes.html" class="nav-link active">Aptitudes</a>
+                    <a href="technical-skills.html" class="nav-link">Technical Skills</a>
+                    <a href="work-samples.html" class="nav-link">Work Samples</a>
+                    <a href="in-the-field.html" class="nav-link">In the Field</a>
+                    <a href="recommendations.html" class="nav-link">Recommendations</a>
+                    <a href="contact.html" class="nav-link">Contact Me</a>
+                </nav>
+            </div>
+            <div class="right-nav">
+                <a href="profiles.html" class="profile-icon">
+                    <img src="https://i.imgur.com/zaOTwAm.jpg" alt="hiring-team-page">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="personal-story-page">
+        <div class="page-title">
+            <h1>About Me</h1>
+        </div>
+
+        <!-- Interactive timeline with life chapters -->
+        <div class="story-container">
+            <!-- Life chapters navigation - Netflix style seasons -->
+            <div class="life-chapters">
+                <div class="chapter-selector">
+                    <button class="chapter-btn active" data-chapter="early-years">
+                        <div class="chapter-number">01</div>
+                        <div class="chapter-title">Early Years</div>
+                    </button>
+                    <button class="chapter-btn" data-chapter="education">
+                        <div class="chapter-number">02</div>
+                        <div class="chapter-title">Education</div>
+                    </button>
+                    <button class="chapter-btn" data-chapter="career-beginnings">
+                        <div class="chapter-number">03</div>
+                        <div class="chapter-title">Career Beginnings</div>
+                    </button>
+                    <button class="chapter-btn" data-chapter="pivotal-moments">
+                        <div class="chapter-number">04</div>
+                        <div class="chapter-title">Pivotal Moments</div>
+                    </button>
+                    <button class="chapter-btn" data-chapter="current-chapter">
+                        <div class="chapter-number">05</div>
+                        <div class="chapter-title">Current Chapter</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chapter content - changes based on selection -->
+            <div class="chapter-content-container">
+                <!-- Early Years -->
+                <div class="chapter-content active" id="early-years-content">
+                    <div class="chapter-header">
+                        <div class="chapter-info">
+                            <h2>Early Years</h2>
+                            <div class="chapter-meta">
+                                <span class="chapter-years">The Beginning - Age 12</span>
+                                <span class="chapter-location">Philadelphia, PA</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter-episodes">
+                        <!-- Each episode represents a key memory or event -->
+                        <div class="episode">
+                            <div class="episode-number">01</div>
+                            <div class="episode-content">
+                                <h3>First Encounters with Technology</h3>
+                                <p>My journey with technology began when my dad introduced my siblings and I to our first family computer. I was immediately fascinated by how it worked and spent hours exploring its capabilities. This early exposure sparked a curiosity that would define my future path.</p>
+                                <div class="episode-image">
+                                    <img src="https://i.imgur.com/AI1gGX7.jpg" alt="Childhood Days">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">02</div>
+                            <div class="episode-content">
+                                <h3>Childhood Inspirations</h3>
+                                <p>From late nights gaming to early mornings watching medical documentaries, I grew up equally inspired by the imaginative worlds of video games and the real-life heroes in white coats. Both sparked a fascination with systems—whether human or digital—and the desire to understand and improve them..</p>
+                                <div class="memorable-quote">
+                                    <span class="quote-mark">"</span>
+                                    <p>Stay curious—ask questions, follow wonder, and the answers will find you.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">03</div>
+                            <div class="episode-content">
+                                <h3>Early Creative Projects</h3>
+                                <p>By age 12 years old, I was already designing science fair displays that blended creativity with curiosity—constructing models of the human body, researching diseases, and presenting them with a passion that hinted at my future in health and science communication.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="chapter-content" id="education-content">
+                    <div class="chapter-header">
+                        <div class="chapter-info">
+                            <h2>Education</h2>
+                            <div class="chapter-meta">
+                                <span class="chapter-years">Age 13 - Adulthood</span>
+                                <span class="chapter-location">Primary School | Florida A&M University | Howard University</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter-episodes">
+                        <div class="episode">
+                            <div class="episode-number">01</div>
+                            <div class="episode-content">
+                                <h3>Formative School Years</h3>
+                                <p>During high school, I found myself captivated by the human body and the stories of people from around the world. My passions for medicine and cultural exploration grew side-by-side, shaping a worldview centered on empathy and understanding.</p>
+                                <div class="episode-image">
+                                    <img src="https://i.imgur.com/c7LVsyW.jpg" alt="School Photo">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">02</div>
+                            <div class="episode-content">
+                                <h3>College Decisions</h3>
+                                <p>College was a journey of discovery—I changed majors three times, seeking clarity and purpose. Ultimately, I returned to my original path in pre-med, earning a Master of Public Health before culminating my academic journey with a Doctor of Pharmacy degree.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">03</div>
+                            <div class="episode-content">
+                                <h3>Key Academic Projects</h3>
+                                <p>Whether dissecting cadavers in gross anatomy, serving Native American communities on a reservation, or collaborating with the CDC as a pharmacy extern, I sought out experiences that pushed me beyond the classroom and into the heart of real-world public health.</p>
+                                <div class="achievement-highlight">
+                                    <h4>Key Achievement</h4>
+                                    <p>In 2020 despite a worldwide pandemic, I had the honor of presenting my own research at the American Pharmacists Association’s Midyear Conference, marking a major milestone in my growth as a clinical scholar and communicator.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Career Beginnings -->
+                <div class="chapter-content" id="career-beginnings-content">
+                    <div class="chapter-header">
+                        <div class="chapter-info">
+                            <h2>Career Beginnings</h2>
+                            <div class="chapter-meta">
+                                <span class="chapter-years">First 5 Years</span>
+                                <span class="chapter-location">Professional World</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter-episodes">
+                        <div class="episode">
+                            <div class="episode-number">01</div>
+                            <div class="episode-content">
+                                <h3>First Professional Role</h3>
+                                <p>My professional journey started in the ICU as a Cardiac Monitor Technician, where I first learned the value of vigilance, teamwork, and compassion. Every beep on the monitor told a story—and I learned to listen.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">02</div>
+                            <div class="episode-content">
+                                <h3>Major Projects & Learning</h3>
+                                <p>Working in patient care taught me that medicine is a team sport. Healing isn’t just clinical—it’s personal, educational, and deeply human. It was here I recognized that health literacy can be just as life-saving as any medication.</p>
+                                <div class="episode-image">
+                                    <img src="https://i.imgur.com/C85YkVC.jpg" alt="Early Career">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">03</div>
+                            <div class="episode-content">
+                                <h3>Growth & Development</h3>
+                                <p>Driven to make a broader impact, I transitioned from direct care to supporting communities affected by HIV, focusing on education, prevention, and access—recognizing that public health solutions must meet people where they are.</p>
+                                <div class="memorable-quote">
+                                    <span class="quote-mark">"</span>
+                                    <p>"In those early days, I learned that healing isn't just about medicine—it's about listening, teamwork, and meeting people where they are."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pivotal Moments -->
+                <div class="chapter-content" id="pivotal-moments-content">
+                    <div class="chapter-header">
+                        <div class="chapter-info">
+                            <h2>Pivotal Moments</h2>
+                            <div class="chapter-meta">
+                                <span class="chapter-years">Key Turning Points</span>
+                                <span class="chapter-location">Career & Personal Life</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter-episodes">
+                        <div class="episode">
+                            <div class="episode-number">01</div>
+                            <div class="episode-content">
+                                <h3>Career Transformation</h3>
+                                <p>My path pivoted again as I returned to school to pursue a PharmD. Along the way, I uncovered a deep interest in health informatics—where data, technology, and clinical practice intersect to improve outcomes in innovative ways.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">02</div>
+                            <div class="episode-content">
+                                <h3>Taking Risks</h3>
+                                <p>With no job, no safety net, and no familiar faces, I packed up my Camaro and moved across the country to chase a new dream. It was a leap of faith that taught me the value of discomfort, growth, and relentless belief in one’s purpose.</p>
+                                <div class="episode-image">
+                                    <img src="https://i.imgur.com/u9BZaGU.jpg" alt="Pivotal Career Moment">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">03</div>
+                            <div class="episode-content">
+                                <h3>Overcoming Challenges</h3>
+                                <p>Returning to the rigors of academia after three years away wasn’t easy. Rebuilding structure, discipline, and stamina took grit—but I did it while juggling contract work and laying the groundwork for the next chapter of my career.</p>
+                                <div class="achievement-highlight">
+                                    <h4>Breakthrough Moment</h4>
+                                    <p>Securing a pharmacy externship with the CDC was a pivotal breakthrough that affirmed my path and revealed my strength in translating complex clinical data into impactful public health solutions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Chapter -->
+                <div class="chapter-content" id="current-chapter-content">
+                    <div class="chapter-header">
+                        <div class="chapter-info">
+                            <h2>Current Chapter</h2>
+                            <div class="chapter-meta">
+                                <span class="chapter-years">Present Day</span>
+                                <span class="chapter-location">Professional & Personal Focus</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter-episodes">
+                        <div class="episode">
+                            <div class="episode-number">01</div>
+                            <div class="episode-content">
+                                <h3>Where I Am Now</h3>
+                                <p>I translate the language of clinical pharmacy into the language of everyday life. At the intersection of healthcare and technology, I bridge worlds where computer programming meets pharmaceutical science. From public health to precision medicine, my journey has shown me that healthcare’s biggest challenges are often communication puzzles waiting to be solved.</p>
+                                <div class="episode-image">
+                                    <img src="https://i.imgur.com/KzBQJKi.jpg" alt="Current Work">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">02</div>
+                            <div class="episode-content">
+                                <h3>Professional Philosophy</h3>
+                                <p>I believe that knowledge should be as accessible as medicine itself. My philosophy is simple: empower, simplify, and illuminate. Through design, data, and dialogue, I aim to transform complex health information into stories that inform, inspire, and drive change.</p>
+                                <div class="memorable-quote">
+                                    <span class="quote-mark">"</span>
+                                    <p>The greatest innovations in healthcare won't just come from new discoveries—they'll come from new ways of communicating what we already know.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="episode">
+                            <div class="episode-number">03</div>
+                            <div class="episode-content">
+                                <h3>Looking Forward</h3>
+                                <p>I’m on a mission to democratize healthcare knowledge through visual storytelling and technological innovation. By exploring the emerging frontiers of healthcare informatics, data visualization, and programming, I strive to turn raw clinical data into insights that improve lives—one chart, one line of code, one person at a time.</p>
+                                <div class="cta-next-chapter">
+                                    <h4>Next Chapter Preview</h4>
+                                    <p>I hope to help create and be part of a movement that drives the next big breakthrough in visual technology—transforming how the world understands and engages with health.</p>
+                                    <a href="contact.html" class="story-cta-button">Connect With Me</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Chapter switching functionality
+            const chapterButtons = document.querySelectorAll('.chapter-btn');
+            const chapterContents = document.querySelectorAll('.chapter-content');
+            
+            chapterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    chapterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show selected chapter content, hide others
+                    const selectedChapter = this.dataset.chapter;
+                    chapterContents.forEach(content => {
+                        if (content.id === selectedChapter + '-content') {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
