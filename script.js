@@ -1259,7 +1259,7 @@ function initDownloadButtons() {
     const downloadBtns = document.querySelectorAll('.download-btn');
     
     downloadBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
+       /* btn.addEventListener('click', function(e) {
             // For demo purposes, we're preventing the default action
             // In a real implementation, this would download the PDF
             e.preventDefault();
@@ -1278,5 +1278,6 @@ function initDownloadButtons() {
                 }, 2000);
             }, 1500);
         });
+        */
     });
 }
